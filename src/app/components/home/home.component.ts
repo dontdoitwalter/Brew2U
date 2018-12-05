@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+   // make this a model???
+  username: string;
+  password: string;
 
   ngOnInit() {
+  }
+
+  login() : void {
+    if(this.username == 'myloginid' && this.password == 'mypassword'){
+      console.log(this.username, this.password);
+     this.router.navigate(["landing"]);
+    }else {
+      alert("Invalid credentials!");
+    }
   }
 
 }
