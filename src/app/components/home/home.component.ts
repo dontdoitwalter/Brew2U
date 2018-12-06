@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-home',
@@ -7,23 +8,36 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  error = '';
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService
+  ) { }
 
-   // make this a model???
+  /////////REMOVE THIS
   username: string;
   password: string;
 
   ngOnInit() {
   }
 
-  login() : void {
-    if(this.username == 'myloginid' && this.password == 'mypassword'){
-      console.log(this.username, this.password);
-     this.router.navigate(["landing"]);
-    }else {
-      alert("Invalid credentials!");
-    }
+  login(username, password) {
+    this.authenticationService.login(username, password)
+      .subscribe(
+        data => {
+          this.router.navigate([`/menu`]);
+        },
+        error => {
+          this.error = error;
+        });
+
   }
+
+  logout() {
+    this.authenticationService.logout()
+  }
+
+
 
 }

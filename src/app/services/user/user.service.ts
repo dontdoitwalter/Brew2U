@@ -14,15 +14,19 @@ const httpOptions = {
 })
 export class UserService {
 
-  private _dbUrl = "http://localhost:3000"
+    private _dbUrl = "http://localhost:3000"
 
-  constructor(private _http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getUser() : Observable<User[]> {
-    return this._http.get<User[]>(`${this._dbUrl}/all`)
-  }
+//   getById(id: number) {
+//     return this.http.get<User>(`${apiUrl}/users/${id}`);
+// }
+
+//   getUser() : Observable<User[]> {
+//     return this._http.get<User[]>(`${this._dbUrl}/all`)
+//   }
   
-  makeUser(user: User) : Observable<User[]> {
-    return this._http.post<User[]>(`${this._dbUrl}/create`, user, httpOptions)
-  }
+//   makeUser(user: User) : Observable<User[]> {
+//     return this._http.post<User[]>(`${this._dbUrl}/create`, user, httpOptions)
+//   }
 }
