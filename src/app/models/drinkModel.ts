@@ -1,4 +1,5 @@
 export interface Drink {
+    id: number;
     drinkName: string,
     price: string,
     drinkSize: string,
