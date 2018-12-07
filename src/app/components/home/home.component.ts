@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     this.authenticationService.login(username, password)
       .subscribe(
         data => {
-          this.router.navigate([`/menu`]);
+          this.router.navigate([`/contact`]);
         },
         error => {
           this.error = error;
