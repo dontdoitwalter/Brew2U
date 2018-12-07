@@ -18,3 +18,16 @@ export class AppComponent {
     this.authenticationService.logout()
   }
 }
+
+
+// login(username, password) {
+//   this.authenticationService.login(username, password)
+//     .subscribe(
+//       data => {
+//         this.router.navigate([`/menu`]);
+//       },
+//       error => {
+//         this.error = error;
+//       });
+
+// }

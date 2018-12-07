@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms'
-import { UserService } from 'src/app/services/user/user.service';
+import { FormBuilder, FormGroup, FormControl, NgModel } from '@angular/forms'
+import { UserService } from '../../services/user/user.service';
 import { HttpClient } from '@angular/common/http';
+import { User } from '../../models/userModel';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-register',
@@ -10,38 +12,55 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
- 
-createUser = [];
-users = [];
+
+  users = [];
+  error = '';
+
+  // createUser = [];
+  // email: string;
+  // username: string;
+  // password: string;
+  // firstName: string;
+  // lastName: string;
+  // userAddress: string;
+  // userSecondAddress: string;
+  // userCity: string;
+  // userState: string;
+  // userZipcode: number;
+  // phoneNumber: string;
+  // isAdmin: boolean;
+
+  // isAdmin: boolean = false
 
 
-  email: string;
-  username: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-  userAddress: string;
-  userSecondAddress: string;
-  userCity: string;
-  userState: string;
-  userZipcode: number;
-  phoneNumber: string;
-  isAdmin: boolean;
+  constructor(private router: Router,
+    private userservice: UserService,
+    private http: HttpClient,
+  ) { }
+
+  ngOnInit() { }
+
+  register(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber, isAdmin) {
+    this.userservice.register(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber, isAdmin)
+      .subscribe(
+        data => {
+          this.router.navigate([`/menu`]);
+        },
+        error => {
+          this.error = error;
+        });
 
 
-  constructor(private router: Router, private userservice: UserService, private http: HttpClient) { }
-
-  // ngOnInit() {}
-
-    ngOnInit(): void {
-         this.http.get('http://localhost:3000/info/1').subscribe(data => {
-        console.log(data);
-    })
-  };
 
 
-  register() : void {
-  console.log(this.email, this.phoneNumber);
+    console.log(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber);
   }
-  
+
+
+
 }
+
+
+
+
+

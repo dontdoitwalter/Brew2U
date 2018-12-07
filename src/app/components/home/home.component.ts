@@ -9,18 +9,13 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class HomeComponent implements OnInit {
   error = '';
-
+ 
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService
   ) { }
 
-  /////////REMOVE THIS
-  username: string;
-  password: string;
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   login(username, password) {
     this.authenticationService.login(username, password)
@@ -34,10 +29,4 @@ export class HomeComponent implements OnInit {
 
   }
 
-  logout() {
-    this.authenticationService.logout()
-  }
-
-
-
-}
+ }
