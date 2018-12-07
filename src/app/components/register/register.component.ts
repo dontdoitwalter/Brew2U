@@ -15,6 +15,8 @@ export class RegisterComponent implements OnInit {
 
   users = [];
   error = '';
+  isAdmin = false; 
+
 
   // createUser = [];
   // email: string;
@@ -30,15 +32,15 @@ export class RegisterComponent implements OnInit {
   // phoneNumber: string;
   // isAdmin: boolean;
 
-  // isAdmin: boolean = false
-
 
   constructor(private router: Router,
     private userservice: UserService,
     private http: HttpClient,
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+
+  }
 
   register(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber, isAdmin) {
     this.userservice.register(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber, isAdmin)
@@ -53,7 +55,7 @@ export class RegisterComponent implements OnInit {
 
 
 
-    console.log(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber);
+    // console.log(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber, isAdmin);
   }
 
 

@@ -21,7 +21,7 @@
         <mat-form-field appearance="outline">
             <mat-label>First Name</mat-label>
             <!-- <input matInput placeholder="First Name" [(ngModel)]="firstName" name="firstName" required> -->
-            <input matInput placeholder="First Name" [(ngModel)]="firstName" name="firstName" >
+            <input matInput placeholder="First Name" [(ngModel)]="firstName" name="firstName">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
@@ -66,9 +66,17 @@
             <input matInput type="tel" placeholder="317-555-5555" [(ngModel)]="phoneNumber" name="phoneNumber">
         </mat-form-field>
 
+        <mat-form-field appearance="outline">
+            <mat-label>Admin login? </mat-label>
+            <input matInput type="tel" placeholder="317-555-5555" [(ngModel)]="phoneNumber" name="phoneNumber">
+        </mat-form-field>
+
+        <mat-slide-toggle color="primary" [checked]="false" [disabled]="true" [(ngModel)]="isAdmin" name="isAdmin">
+            Administrator
+        </mat-slide-toggle>
 
         <mat-card-actions>
-            <button mat-raised-button (click)="register(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState ,userZipcode, phoneNumber)">Register</button>
+            <button mat-raised-button (click)="register(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState ,userZipcode, phoneNumber, isAdmin)">Register</button>
         </mat-card-actions>
     </form>
 </mat-card>
