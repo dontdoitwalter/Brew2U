@@ -25,7 +25,7 @@ export class UserService {
   firstName: string;
   lastName: string;
   userAddress: string;
-  userSecondAddress: string;
+  userSecondAddress: string = ''
   userCity: string;
   userState: string;
   userZipcode: number;
@@ -48,13 +48,12 @@ public get currentUserValue(): User {
   register(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState ,userZipcode, phoneNumber, isAdmin) {
     return this.http.post<any>(`http://localhost:3000/user/signup`, {user: {email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState ,userZipcode, phoneNumber, isAdmin }})
     .pipe(map(user => {
-      // SAM /////////////////// fix this
-      if (user && user) {
+          if (user && user) {
           
-          localStorage.setItem('token', user.sessiontoken);
- 
-      }
-
+          localStorage.setItem('token', user.sessionToken);
+          console.log(user)
+          console.log('are we ever here??? user service')
+       }
       return user;
   }));
 }
