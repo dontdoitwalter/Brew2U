@@ -15,30 +15,14 @@ export class RegisterComponent implements OnInit {
 
   users = [];
   error = '';
-  isAdmin = false; 
-
-
-  // createUser = [];
-  // email: string;
-  // username: string;
-  // password: string;
-  // firstName: string;
-  // lastName: string;
-  // userAddress: string;
-  // userSecondAddress: string;
-  // userCity: string;
-  // userState: string;
-  // userZipcode: number;
-  // phoneNumber: string;
-  // isAdmin: boolean;
-
+  isAdmin = false;
 
   constructor(private router: Router,
     private userservice: UserService,
     private http: HttpClient,
   ) { }
 
-  ngOnInit() { 
+  ngOnInit() {
 
   }
 
@@ -46,20 +30,12 @@ export class RegisterComponent implements OnInit {
     this.userservice.register(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber, isAdmin)
       .subscribe(
         data => {
-          this.router.navigate([`/menu`]);
+          this.router.navigate([`/home`]);
         },
         error => {
           this.error = error;
         });
-
-
-
-
-    // console.log(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber, isAdmin);
   }
-
-
-
 }
 
 
