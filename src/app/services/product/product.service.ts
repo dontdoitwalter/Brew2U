@@ -13,28 +13,14 @@ const httpOptions = {
   providedIn: 'root'
 })
 
-// export class ProductService implements OnInit {
   export class ProductService {
 
   constructor(private _http: HttpClient) { }
 
-  private _dbUrl = "http://localhost:3000"
-  
-  // https://brew2userver.herokuapp.com/
+  // private _dbUrl = "http://localhost:3000"
+  // private _dbUrl = "https://brew2userver.herokuapp.com"
 
-  // OnInit() {
-  //   console.log('sdfsddsf')
-  // }
-
-    getProduct() : Observable < Drink[] > {
-      return this._http.get<Drink[]>(`${this._dbUrl}/all`)
+    getProduct() : Observable<Drink[] > {
+      return this._http.get<Drink[]>(`https://brew2userver.herokuapp.com/drink/alldrinks`)
     }
-
-  // getProduct() : Observable<Drink[]> {
-  //   return this._http.get<Drink[]>(`${this._dbUrl}/all`)
-  // }
-
-  // makeUser(drink: Drink) : Observable<Drink[]> {
-  //   return this._http.post<Drink[]>(`${this._dbUrl}/create`, drink, httpOptions)
-  // }
 }

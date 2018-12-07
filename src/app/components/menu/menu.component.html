@@ -2,6 +2,17 @@
   menu works!
 </p>
 
-<app-menu>
-  *ngFor="let one of drinks"
-  </app-menu>
+<!-- <ul>
+  <li *ngFor="let drink of drinks.drinkName">
+    {{ drink }}
+  </li>
+</ul> -->
+
+  <!-- {{ drinks.drink.1.id | json }} -->
+<!-- 
+  {{ drinks | json }} -->
+
+  <li *ngFor="let d of drinks.drink"> {{ d.drinkName }} {{ d.price }} </li>
+
+  
+  <!-- <li *ngFor="let drinkName of drinks.drink"> {{ drinkName }} </li> -->
