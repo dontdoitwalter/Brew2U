@@ -24,6 +24,7 @@ export class MenuComponent implements OnInit {
   displayMenu(): void {
     this.productservice.getProduct().subscribe(Drink => {
       this.drinks = Drink
+      console.log(this.drinks)
     })
   }
 }
