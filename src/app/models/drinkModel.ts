@@ -1,7 +1,7 @@
-export interface Drink {
+export interface Product {
     id: number;
     drinkName: string,
-    price: string,
+    price: number,
     drinkSize: string,
     espresso: string,
     milkOptions: string,
