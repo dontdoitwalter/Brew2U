@@ -48,6 +48,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { CustomizeComponent } from './components/customize/customize.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     HomeComponent,
     ContactComponent,
     CustomizeComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

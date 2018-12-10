@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductService } from '../../services/product/product.service'
+import { ProductService } from '../../services/product/product.service';
+import { Product } from '../../models/drinkModel';
+import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-menu',
@@ -8,23 +10,22 @@ import { ProductService } from '../../services/product/product.service'
   styleUrls: ['./menu.component.css']
 })
 
-
 export class MenuComponent implements OnInit {
-  error = '';
-  drinks = []
+  // id: number; 
+  // drinkName: string;
+  // price: number;
+  private products: Product[];
 
   constructor(private router: Router,
     private productservice: ProductService
   ) { }
 
   ngOnInit() {
-    this.displayMenu()
+    this.products = this.productservice.findAll();
+    // console.log(this.products)
   }
 
-  displayMenu(): void {
-    this.productservice.getProduct().subscribe(Drink => {
-      this.drinks = Drink
-      console.log(this.drinks)
-    })
+  clearCart() {
+    localStorage.removeItem('cart');
   }
 }
