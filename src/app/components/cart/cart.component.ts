@@ -15,7 +15,7 @@ export class CartComponent implements OnInit {
   private delivery: number = 0;
   private Tax: number = 0;
   private subtotal: number = 0;
-
+  
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService
@@ -57,7 +57,7 @@ export class CartComponent implements OnInit {
       } else {
 
         ///sam just changed this
-        // this.loadCart();
+        this.loadCart();
       }
     });
   }
@@ -68,6 +68,7 @@ export class CartComponent implements OnInit {
     this.delivery = 3;
     this.Tax = 0;
     this.items = [];
+     
     let cart = JSON.parse(localStorage.getItem('cart'));
     for (var i = 0; i < cart.length; i++) {
       let item = JSON.parse(cart[i]);
@@ -101,5 +102,10 @@ export class CartComponent implements OnInit {
     localStorage.removeItem('cart');
     this.loadCart();
   }
+
+  submitCart() {
+    console.log('submit cart');
+  }
+
 
 }

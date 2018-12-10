@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { AuthenticationService } from '../app/services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -17,23 +18,12 @@ export class AppComponent {
   public title = 'brew2u';
 
   constructor(
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private router: Router,
   ) { }
 
   logout() {
-    this.authenticationService.logout()
+    this.authenticationService.logout();
+    this.router.navigate([`/home`]);
   }
 }
-
-
-// login(username, password) {
-//   this.authenticationService.login(username, password)
-//     .subscribe(
-//       data => {
-//         this.router.navigate([`/menu`]);
-//       },
-//       error => {
-//         this.error = error;
-//       });
-
-// }
