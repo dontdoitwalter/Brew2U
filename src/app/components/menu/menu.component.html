@@ -1,19 +1,8 @@
-<p>
-  menu works!
-</p>
-<!-- ////works -->
-<!-- <li *ngFor="let d of drinks.drink"> {{ d.drinkName }} {{ d.price }} </li> -->
-
-<!-- ////works -->
-<!-- <li *ngFor="let d of drinks.drink"> <button id="order" (click)="orderDrink(d.id, d.drinkName, d.price)">Add</button> {{ d.drinkName }} {{ d.price }} </li> -->
-    {{i}} {{item}}
-<!-- //////////WORKS!!!! -->
+  {{i}} {{item}}
 <p *ngFor="let d of products">
-    {{ d.id }} {{ d.drinkName }} {{ d.price }}
+    {{ d.drinkName }} {{ d.price }}
 <mat-card>
   <mat-card-content>
-    <!-- <p *ngFor="let d of drinks.drink"> -->
-      <!-- {{ d.drinkName }} {{ d.price }} -->
       <section class="example-section">
         <label id='d' class="example-margin"></label>
         <mat-radio-group id='d'[(ngModel)]="milkOptions">
