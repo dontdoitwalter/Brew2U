@@ -43,12 +43,19 @@ import { MenuComponent } from './components/menu/menu.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ProductService } from './services/product/product.service';
 import { UserService } from './services/user/user.service';
+import { OrdersService } from './services/orders/orders.service';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { CustomizeComponent } from './components/customize/customize.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { CartComponent } from './components/cart/cart.component';
+import { MainComponent } from './admin/main/main.component';
+import { UserAdminComponent } from './admin/user-admin/user-admin.component';
+import { OrderAdminComponent } from './admin/order-admin/order-admin.component';
+import { AdminComponent } from './admin/admin/admin.component';
+import { StoresComponent } from './admin/stores/stores.component';
+import { AddStoreComponent } from './admin/add-store/add-store.component';
 
 
 @NgModule({
@@ -63,7 +70,13 @@ import { CartComponent } from './components/cart/cart.component';
     ContactComponent,
     CustomizeComponent,
     CheckoutComponent,
-    CartComponent
+    CartComponent,
+    MainComponent,
+    UserAdminComponent,
+    OrderAdminComponent,
+    AdminComponent,
+    StoresComponent,
+    AddStoreComponent
   ],
   imports: [
     BrowserModule,
@@ -104,7 +117,7 @@ import { CartComponent } from './components/cart/cart.component';
     MatSortModule,
     MatPaginatorModule,
   ],
-  providers: [HttpClient, ProductService, UserService ],
+  providers: [HttpClient, ProductService, UserService, OrdersService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

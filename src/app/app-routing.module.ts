@@ -11,6 +11,12 @@ import { ContactComponent } from './components/contact/contact.component';
 import { CustomizeComponent } from './components/customize/customize.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { CartComponent } from './components/cart/cart.component';
+import { MainComponent } from '../app/admin/main/main.component';
+import { OrderAdminComponent } from '../app/admin/order-admin/order-admin.component';
+import { UserAdminComponent } from '../app/admin/user-admin/user-admin.component';
+import { AdminComponent } from '../app/admin/admin/admin.component';
+import { StoresComponent } from '../app/admin/stores/stores.component';
+import { AddStoreComponent } from './admin/add-store/add-store.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -25,7 +31,13 @@ const routes: Routes = [
   { path: 'userprofile', component: UserProfileComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'cart', component: CartComponent },
-
+  { path: 'admin/main', component: MainComponent },
+  { path: 'admin/orderadmin', component: OrderAdminComponent },
+  { path: 'admin/useradmin', component: UserAdminComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'admin/storesadmin', component: StoresComponent },
+  { path: 'admin/addstoresadmin', component: AddStoreComponent },
+  
 ];
 
 @NgModule({

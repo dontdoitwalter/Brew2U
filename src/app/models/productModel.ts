@@ -1,4 +1,4 @@
-export interface Drink {
+export interface Product {
     id: number;
     drinkName: string,
     price: number,

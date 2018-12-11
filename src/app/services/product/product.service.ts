@@ -1,13 +1,7 @@
 import { Injectable } from '@angular/core';
-// import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Product } from '../../models/drinkModel';
-// import { Observable } from "rxjs";
-
-// const httpOptions = {
-//   headers: new HttpHeaders({
-//     'Content-Type': 'application/json'
-//   })
-// }
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Product } from '../../models/productModel';
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +11,9 @@ export class ProductService {
 
   private products: Product[];
 
-  constructor() {
+  constructor(
+    private http: HttpClient
+  ) {
     this.products = [
       { id: 1, drinkName: "White Chocolate Mocha", price: 5.99, drinkSize: null, espresso: null, milkOptions: null, foam: null, drinkDescription: null },
       { id: 2, drinkName: "Plain Black Coffee", price: 3.99, drinkSize: null, espresso: null, milkOptions: null, foam: null, drinkDescription: null },
@@ -43,6 +39,8 @@ export class ProductService {
     }
     return -1;
   }
+
+  
 }
 
 
