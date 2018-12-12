@@ -57,6 +57,7 @@ import { OrderAdminComponent } from './admin/order-admin/order-admin.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { StoresComponent } from './admin/stores/stores.component';
 import { AddStoreComponent } from './admin/add-store/add-store.component';
+import { ProductComponent } from './product/product.component';
 
 
 @NgModule({
@@ -77,7 +78,9 @@ import { AddStoreComponent } from './admin/add-store/add-store.component';
     OrderAdminComponent,
     AdminComponent,
     StoresComponent,
-    AddStoreComponent
+    AddStoreComponent,
+    ProductComponent,
+
   ],
   imports: [
     BrowserModule,
