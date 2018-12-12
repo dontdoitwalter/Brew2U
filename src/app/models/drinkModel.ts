@@ -3,8 +3,8 @@ export interface Drink {
     drinkName: string,
     price: number,
     drinkSize: string,
-    espresso: string,
-    milkOptions: string,
-    foam: string,
+    // espresso: string,
+    // milkOptions: string,
+    // foam: string,
     drinkDescription: string,
     }

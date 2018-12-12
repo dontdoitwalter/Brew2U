@@ -104,8 +104,20 @@ export class CartComponent implements OnInit {
   }
 
   submitCart() {
-    console.log('submit cart');
+    console.log(this.items);
   }
 
-
 }
+
+
+// submitOrder   (storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours) {
+//   this.storesservice.addstore(storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours)
+//     .subscribe(
+//       data => {
+//         this.router.navigate([`/menu`]);
+//       },
+//       error => {
+//         this.error = error;
+//       });
+//     }
+  // }

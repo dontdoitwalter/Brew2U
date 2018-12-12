@@ -31,5 +31,19 @@ export class StoresComponent implements OnInit {
     })
   }
 
+  updateStore(id) {
+    // work on this SAM
+    // display after update
+    // this.router.navigate([`/admin/addstoresadmin`]);
+  }
+
+  deleteStore(id): void {
+    this.storesservice.deleteStore(id).subscribe(Store => {
+      this.stores = Store
+      this.router.navigate([`/admin/storesadmin`]);
+          })
+  }
+
+
 
 }

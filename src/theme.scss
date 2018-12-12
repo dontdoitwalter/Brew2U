@@ -10,3 +10,43 @@ $theme: mat-light-theme($primary, $accent);
 
 // Include all theme styles for the components.
 @include angular-material-theme($theme);
+
+// table {
+//     font-size: 1em;
+//     }
+
+.mat-form-field {
+    font-size: .95em;
+    /* text-align: center; */
+    line-height: 1;
+    // width: 50%;
+    min-width: 200px;
+    max-width: 500px;
+    }
+
+.mat-form-field-wrapper {
+  padding: .10em;  
+  padding-bottom: .10em;
+  margin: .10em;
+}
+
+.mat-form-field-appearance-outline {
+    margin: .10em;
+}
+
+.mat-card {
+font-size: .95em;
+line-height: 1;
+width: 50%;
+margin: .10em;
+padding: .10em;  
+}
+
+.mat-card-content {
+font-size: .95em;
+line-height: 1;
+// width: 50%;
+margin: .10em;
+padding: .10em;  
+
+}

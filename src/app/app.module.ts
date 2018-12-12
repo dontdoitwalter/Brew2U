@@ -43,6 +43,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ProductService } from './services/product/product.service';
 import { UserService } from './services/user/user.service';
+import { AlluserService } from './services/alluser.service';
 import { OrdersService } from './services/orders/orders.service';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
@@ -117,7 +118,7 @@ import { AddStoreComponent } from './admin/add-store/add-store.component';
     MatSortModule,
     MatPaginatorModule,
   ],
-  providers: [HttpClient, ProductService, UserService, OrdersService ],
+  providers: [HttpClient, ProductService, UserService, OrdersService, AlluserService  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

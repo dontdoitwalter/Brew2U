@@ -1,35 +1,32 @@
-
 <a href="/admin/useradmin">Go to user admin</a>
 <br />
 <a href="/admin/orderadmin">Go to order admin</a>
 <br />
 <a href="/admin/storesadmin">Go to store admin</a>
 
+<!-- {{ stores | json }}  -->
+
 <mat-card-actions>
     <button mat-raised-button (click)="addStore()">ADD STORE</button>
-    
-    <!-- AddStoreComponent -->
-    
-    <!-- <button mat-raised-button (click)="updateStore(d.id, d.storeName, d.streetAddress, d.storeState, d.storeCity, d.storeZip, d.storePhone, d.storeHours)">Update Store</button> -->
 </mat-card-actions>
+<p *ngFor="let d of stores.stores"> {{ d.storeName }}
+    <mat-card>
+        <form>
+            <mat-card-actions>
+                <button mat-raised-button (click)="updateStore(d.id)">UPDATE</button>
+                <!-- <button mat-raised-button (click)="updateStore(d.id, d.storeName, d.streetAddress, d.storeState, d.storeCity, d.storeZip, d.storePhone, d.storeHours)">Update Store</button> -->
+            </mat-card-actions>
+            <mat-card-actions>
+                <button mat-raised-button (click)="deleteStore(d.id)">DELETE</button>
+            </mat-card-actions>
+        </form>
+    </mat-card>
+</p>
 
-<p *ngFor="let d of stores.stores"> {{ d.id }} {{ d.storeName }}
-<!-- {{ stores | json }} -->
-<!-- 
-id: number;
-storeName: string,
-streetAddress: string,
-storeState: string,
-storeCity: string,
-storeZip: number,
-storePhone: string,
-storeHours: string,
 
-id, storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours -->
 
-<mat-card>
-    <form>
-        <!-- <mat-form-field appearance="outline">
+
+<!-- <mat-form-field appearance="outline">
             <mat-label>Store ID</mat-label>
             <input matInput type="text" [(ngModel)]="d.id" name="id" required>
         </mat-form-field>
@@ -39,7 +36,7 @@ id, storeName, streetAddress, storeState, storeCity, storeZip, storePhone, store
             <input matInput [(ngModel)]="d.storeName" name="storeName" required>
         </mat-form-field> -->
 
-        <!-- <mat-form-field appearance="outline">
+<!-- <mat-form-field appearance="outline">
             <mat-label>Address</mat-label>
             <input matInput [(ngModel)]="d.streetAddress" name="streetAddress" required>
         </mat-form-field>
@@ -85,13 +82,30 @@ id, storeName, streetAddress, storeState, storeCity, storeZip, storePhone, store
         </mat-form-field>
  -->
 
-        <mat-card-actions>
+<!-- <mat-card-actions>
             <button mat-raised-button (click)="updateStore(d.id)">UPDATE</button>
-            <!-- <button mat-raised-button (click)="updateStore(d.id, d.storeName, d.streetAddress, d.storeState, d.storeCity, d.storeZip, d.storePhone, d.storeHours)">Update Store</button> -->
+            <button mat-raised-button (click)="updateStore(d.id, d.storeName, d.streetAddress, d.storeState, d.storeCity, d.storeZip, d.storePhone, d.storeHours)">Update Store</button>
         </mat-card-actions>
         <mat-card-actions>
             <button mat-raised-button (click)="deleteStore(d.id)">DELETE</button>
         </mat-card-actions>
     </form>
 </mat-card>
-</p>
+</p> -->
+
+
+
+<!-- {{ stores | json }}  -->
+
+<!-- {{ stores | json }} -->
+<!-- 
+id: number;
+storeName: string,
+streetAddress: string,
+storeState: string,
+storeCity: string,
+storeZip: number,
+storePhone: string,
+storeHours: string,
+
+id, storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours -->

@@ -26,7 +26,7 @@ export class AddStoreComponent implements OnInit {
     this.storesservice.addstore(storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours)
       .subscribe(
         data => {
-          this.router.navigate([`/menu`]);
+          this.router.navigate([`/admin/storesadmin`]);
         },
         error => {
           this.error = error;
