@@ -1,4 +1,4 @@
-import { Product } from '../models/drinkModel';
+import { Product } from '../models/productModel';
 
 export class Item {
 

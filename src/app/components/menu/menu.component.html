@@ -1,17 +1,25 @@
-  {{i}} {{item}}
+<!-- {{i}} {{item}} -->
 <p *ngFor="let d of products">
-    {{ d.drinkName }} {{ d.price }}
-<mat-card>
-  <mat-card-content>
-      <section class="example-section">
+  {{ d.drinkName }} ${{ d.price }}:
+  <mat-card>
+    <mat-card-content>
+      <button mat-raised-button [routerLink]="['/cart', { id:d.id } ]">Add to cart</button>
+    </mat-card-content>
+  </mat-card>
+</p>
+<button routerLink="/cart">go to cart</button>
+<button (click)="clearCart()">empty the cart</button>
+
+
+<!-- <section class="example-section">
         <label id='d' class="example-margin"></label>
         <mat-radio-group id='d'[(ngModel)]="milkOptions">
           <mat-radio-button class="example-margin" value="Milk">Milk</mat-radio-button>
           <mat-radio-button class="example-margin" value="LOW FAT">Low Fat</mat-radio-button>
           <mat-radio-button class="example-margin" value="SOY">Soy</mat-radio-button>
         </mat-radio-group>
-      </section>
-      <br />
+      </section> -->
+<!-- <br />
       <section class="example-section">
         <label id='d' class="example-margin"></label>
         <mat-radio-group id='d' [(ngModel)]="drinkSize">
@@ -20,29 +28,4 @@
           <mat-radio-button class="example-margin" value="Large">Large</mat-radio-button>
         </mat-radio-group>
       </section>
-      <br />
-      <section class="example-section">
-        <mat-slide-toggle id='d' class="example-margin" [(ngModel)]="foam" [color]="primary">
-          Foam?
-        </mat-slide-toggle>
-      </section>
-      {{ milkOptions }}
-      {{ drinkSize }}
-      {{ foam }}
-
-      <!-- <button mat-raised-button (click)="orderDrink(d.id, d.price, d.drinkName, milkOptions, size, foam )">Add to cart</button> -->
-      <button mat-raised-button [routerLink]="['/cart', { id:d.id }]">Add to cart</button>
-      
-      <!-- <button mat-raised-button [routerLink]="['/cart' { id: d.id, d.price, d.drinkName, milkOptions, size, foam )">Add to cart</button> -->
-      
-      <!-- <button [routerLink]="['/cart' { id: d.id } ]">Add to order</button> -->
-      <!-- <button [routerLink]="['/cart', { id:d.id }]">Add to order</button> -->
-      <!-- <button [routerLink]="['/cart', { id, foam, drinkSize, milkOptions }]">Add to order</button> -->
-      <!-- </p> -->
-  </mat-card-content>
-</mat-card>
-</p>
-<button routerLink="/cart" >go to cart</button>
-      <button (click)="clearCart()">empty the cart</button>
-      
-     
+      <br /> -->
