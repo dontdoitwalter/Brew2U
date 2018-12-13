@@ -1,36 +1,35 @@
-<button mat-raised-button routerLink="/admin/useradmin">User Admin</button>
-<button mat-raised-button routerLink="/admin/orderadmin">Order Admin</button>
-<button mat-raised-button routerLink="/admin/storesadmin">Store Admin</button>
-<br />
-<br />
-<p>A listing of the user database</p>
-<p *ngFor="let d of this.users.data">ID: {{d.id}} Username: {{ d.username }}
-    <!-- <button mat-raised-button (click)="updateUser(d.id)">Update User ... do we need this?</button> -->
-    <button mat-raised-button (click)="deleteUser(d.id)">Delete User</button>
-</p>
-<br />
-<br />
-<a>TO ADD NEW USER (including as admin)</a>
-<mat-card>
-    <form>
-        <mat-form-field appearance="outline">
-            <mat-label>Email Address</mat-label>
-            <input matInput type="email" placeholder="Email Address" [(ngModel)]="email" name="email" required>
+<!-- <h2 mat-dialog-title>Modal PopUP</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>The Rich Post</h3>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions> -->
+
+
+
+
+
+
+<mat-dialog-content class="mat-typography">
+<mat-form-field appearance="outline">
+            <!-- <mat-label>Store ID</mat-label> -->
+            <input matInput placeholder="{{id}}" [(ngModel)]="id" name="id" required>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <mat-label>Username</mat-label>
-            <input matInput placeholder="User name" [(ngModel)]="username" name="username" required>
+            <mat-label>Store Name</mat-label>
+            <input matInput [(ngModel)]="storeName" name="storeName" required>
         </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <mat-label>Password</mat-label>
-            <input matInput placeholder="Password" [(ngModel)]="password" name="password" required>
+<mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+            <input matInput [(ngModel)]="streetAddress" name="streetAddress" required>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>First Name</mat-label>
-            <input matInput placeholder="First Name" [(ngModel)]="firstName" name="firstName" required>
+            <input matInput [(ngModel)]="storeState" name="storeState" required>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
@@ -67,13 +66,16 @@
             <mat-label>317-555-5555</mat-label>
             <input matInput type="tel" placeholder="317-555-5555" [(ngModel)]="phoneNumber" name="phoneNumber">
         </mat-form-field>
-
-        <mat-slide-toggle color="primary" [checked]="false" [(ngModel)]="isAdmin" name="isAdmin">
-            Administrator
-        </mat-slide-toggle>
-
-        <mat-card-actions>
-            <button mat-raised-button (click)="register(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState ,userZipcode, phoneNumber, isAdmin)">Register</button>
+    </mat-dialog-content> 
+    <mat-dialog-actions>
+<!-- <mat-card-actions>
+            <button mat-raised-button (click)="updateStore(d.id)">UPDATE</button>
+            <button mat-raised-button (click)="updateStore(d.id, d.storeName, d.streetAddress, d.storeState, d.storeCity, d.storeZip, d.storePhone, d.storeHours)">Update Store</button>
         </mat-card-actions>
-    </form>
-</mat-card>
+        <mat-card-actions>
+            <button mat-raised-button (click)="deleteStore(d.id)">DELETE</button>
+        </mat-card-actions> -->
+
+
+<button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
