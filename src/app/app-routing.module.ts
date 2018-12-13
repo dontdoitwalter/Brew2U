@@ -17,6 +17,7 @@ import { UserAdminComponent } from '../app/admin/user-admin/user-admin.component
 import { AdminComponent } from '../app/admin/admin/admin.component';
 import { StoresComponent } from '../app/admin/stores/stores.component';
 import { AddStoreComponent } from './admin/add-store/add-store.component';
+import { UpdateStoreComponent } from './admin/update-store/update-store.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -37,6 +38,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'admin/storesadmin', component: StoresComponent },
   { path: 'admin/addstoresadmin', component: AddStoreComponent },
+  { path: 'admin/updatestoreadmin', component: UpdateStoreComponent },
   
 ];
 
