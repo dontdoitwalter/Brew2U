@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent  },
   { path: 'customize', component: CustomizeComponent  },
   { path: 'checkout', component: CheckoutComponent  },
-  { path: 'contact', component: ContactComponent  },
+  // { path: 'contact', component: ContactComponent  },
   { path: 'landing', component: LandingComponent },
   { path: 'about', component: AboutComponent },
   { path: 'userprofile', component: UserProfileComponent },
