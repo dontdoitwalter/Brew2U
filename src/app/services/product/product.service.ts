@@ -23,6 +23,10 @@ export class ProductService {
     ];
   }
 
+  
+
+
+
   findAll(): Product[] {
     return this.products;
   }
@@ -40,3 +44,5 @@ export class ProductService {
     return -1;
   }
 }
+
+

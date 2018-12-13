@@ -16,7 +16,8 @@ const httpOptions = {
 })
 export class OrdersService {
   error = '';
-  drinks = []
+  drinks = [];
+  order = []
 
   constructor(
     private http: HttpClient,
@@ -26,6 +27,10 @@ export class OrdersService {
 getProduct(): Observable<Drink[]> {
   return this.http.get<Drink[]>(`https://brew2userver.herokuapp.com/drink/alldrinks`, httpOptions)
 }
+
+getOrders(id: number) : Observable<Drink[] > {
+   return this.http.get<Drink[]>(`https://brew2userver.herokuapp.com/user/${{ id }}/pastorders`, httpOptions)
+ }
 
 findOneProduct(id: number): Drink {
   this.http.get<Drink[]>(`https://brew2userver.herokuapp.com/drink/getdrink/${{ id }}`, httpOptions)

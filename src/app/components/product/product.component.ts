@@ -16,33 +16,38 @@ export class ProductComponent implements OnInit {
 
 
 
-  ngOnInit() {
-    this.service.getProduct();
-  }
+   ngOnInit() {
 
-  onClear() {
-    this.service.form.reset();
-    this.service.initializeFormGroup();
-    this.notificationService.success(':: Submitted successfully');
-  }
 
-  onSubmit() {
-    if (this.service.form.valid) {
-      if (!this.service.form.get('$key').value)
-        this.service.insertProduct(this.service.form.value);
-      else
-      this.service.updateProduct(this.service.form.value);
-      this.service.form.reset();
-      this.service.initializeFormGroup();
-      this.notificationService.success(':: Submitted successfully');
-      this.onClose();
-    }
-  }
-
-  onClose() {
-    this.service.form.reset();
-    this.service.initializeFormGroup();
-    this.dialogRef.close();
-  }
+    
+  
 
 }
+}
+//   this.service.getProduct();
+  // }
+
+  // onClear() {
+  //   this.service.form.reset();
+  //   this.service.initializeFormGroup();
+  //   this.notificationService.success(':: Submitted successfully');
+  // }
+
+  // onSubmit() {
+  //   if (this.service.form.valid) {
+  //     if (!this.service.form.get('$key').value)
+  //       this.service.insertProduct(this.service.form.value);
+  //     else
+  //     this.service.updateProduct(this.service.form.value);
+  //     this.service.form.reset();
+  //     this.service.initializeFormGroup();
+  //     this.notificationService.success(':: Submitted successfully');
+  //     this.onClose();
+  //   }
+  // }
+
+  // onClose() {
+  //   this.service.form.reset();
+  //   this.service.initializeFormGroup();
+  //   this.dialogRef.close();
+  // }

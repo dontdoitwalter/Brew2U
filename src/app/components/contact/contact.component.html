@@ -1,9 +1,9 @@
 <mat-card>
     <h1> contact us </h1>
-        <form>
+    <form (submit)="onSubmit();" action="https://formspree.io/darealmvc@gmail.com" method="POST">
             <mat-form-field appearance="outline">
             <mat-label>Your Name</mat-label>
-            <input matInput placeholder="contactname" [(ngModel)]="contactname" name="contactname" required>
+            <input matInput placeholder="contactname" [(ngModel)]="contactname" name="name" required>
             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
             <!-- <mat-hint>myusername</mat-hint> -->
           </mat-form-field>
@@ -13,7 +13,7 @@
             </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Your Message</mat-label>
-            <textarea matInput placeholder="message" [(ngModel)]="message" name="message" rows="8" required>
+            <textarea matInput placeholder="message" [(ngModel)]="message" name="name" rows="8" required>
             </textarea>
                 <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
             <!-- <mat-hint>mypassword</mat-hint> -->
