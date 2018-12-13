@@ -26,12 +26,9 @@ export class StoresService {
     return this.http.get<Store[]>(`https://brew2userver.herokuapp.com/store/showall`)
   }
 
-  findOneStore(id: number): Store {
-    this.http.get<Store[]>(`https://brew2userver.herokuapp.com/store/show/${{ id }}`, httpOptions)
-
-    console.log('this is store in the find  ', id)
-    return this.stores[this.getSelectedIndex(id)];
-  }
+  findOneStore(id: number): Observable<any> {
+    return this.http.get<any>(`https://brew2userver.herokuapp.com/store/show/${id}`, httpOptions);
+   }
 
   private getSelectedIndex(id: number) {
     for (var i = 0; i < this.stores.length; i++) {
@@ -41,6 +38,11 @@ export class StoresService {
     }
     return -1;
   }
+
+  updateStore(id, storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours) {
+    return this.http.put<any>(`https://brew2userver.herokuapp.com/store/update/${id}`, { store: { storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours } }, httpOptions)
+  }
+
 
   addstore(storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours) {
     return this.http.post<any>(`https://brew2userver.herokuapp.com/store/create`, { store: { storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours } }, httpOptions)

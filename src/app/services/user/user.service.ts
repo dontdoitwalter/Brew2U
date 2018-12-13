@@ -19,7 +19,6 @@ export class UserService {
   public currentUser: Observable<User>;
   userSecondAddress: string = ''
   isAdmin: boolean = false
- 
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
@@ -46,5 +45,9 @@ public get currentUserValue(): User {
 
 getUsers() : Observable<User[] > {
   return this.http.get<User[]>(`https://brew2userver.herokuapp.com/user/allusers`, httpOptions)
+}
+
+deleteUser(id) {
+  return this.http.delete<any>(`https://brew2userver.herokuapp.com/user/delete/${id}` , httpOptions)
 }
 }

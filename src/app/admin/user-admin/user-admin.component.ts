@@ -14,9 +14,11 @@ import { AlluserService } from '../../services/alluser.service';
 export class UserAdminComponent implements OnInit {
   error = '';
   users = []
+  isAdmin = false;
 
   constructor(private router: Router,
-    private alluserservice: AlluserService
+    private alluserservice: AlluserService,
+    private userservice: UserService,
   ) { }
 
   ngOnInit() {
@@ -24,11 +26,37 @@ export class UserAdminComponent implements OnInit {
   }
 
 
-  // NEED GET ALL USERS TO DO THIS
-getAllUsers(): void {
-  this.alluserservice.getUsers().subscribe(User => {
-    this.users = User
-    console.log(this.users)
-  })
-}
+  getAllUsers(): void {
+    this.alluserservice.getUsers().subscribe(User => {
+      this.users = User
+      console.log('user admin ', this.users)
+    })
+  }
+
+  register(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber, isAdmin) {
+    this.userservice.register(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber, isAdmin)
+      .subscribe(
+        user => {
+          window.alert("USER CREATED");
+        },
+        error => {
+          this.error = error;
+        });
+  }
+
+  deleteUser(id) : void {
+    this.userservice.deleteUser(id)
+      .subscribe(User => {
+        this.users = User;
+        console.log('delete user are we ever here');
+        this.getAllUsers()
+              },
+        error => {
+          this.error = error;
+          console.log('id sam ', id, this.error)
+          // console.log(this.error);
+          //// fix this sam!!! throws an error on delete
+          this.getAllUsers()  
+        }); 
+      }
 }

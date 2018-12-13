@@ -25,5 +25,6 @@ export class AppComponent {
   logout() {
     this.authenticationService.logout();
     this.router.navigate([`/home`]);
+    window.alert("LOGGED OUT");
   }
 }
