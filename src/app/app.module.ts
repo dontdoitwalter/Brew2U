@@ -55,7 +55,8 @@ import { OrderAdminComponent } from './admin/order-admin/order-admin.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { StoresComponent, DialogContentExampleDialog } from './admin/stores/stores.component';
 import { AddStoreComponent } from './admin/add-store/add-store.component';
-import { UpdateStoreComponent } from './admin/update-store/update-store.component';
+import { UpdateStoreComponent } from './admin/update-store/update-store.component'
+import { ProductComponent } from '../app/components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { UpdateStoreComponent } from './admin/update-store/update-store.componen
     AddStoreComponent,
     UpdateStoreComponent,
     DialogContentExampleDialog,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,

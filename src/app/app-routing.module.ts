@@ -23,7 +23,6 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'contact', component: ContactComponent  },
   { path: 'checkout', component: CheckoutComponent  },
-  { path: 'contact', component: ContactComponent  },
   { path: 'about', component: AboutComponent },
   { path: 'userprofile', component: UserProfileComponent },
   { path: 'menu', component: MenuComponent },
