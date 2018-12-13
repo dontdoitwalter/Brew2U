@@ -1,6 +1,5 @@
-<!-- {{i}} {{item}} -->
 <p *ngFor="let d of products">
-  {{ d.drinkName }} ${{ d.price }}:
+  {{ d.drinkName }} {{d.drinkSize}} ${{ d.price }}:
   <mat-card>
     <mat-card-content>
       <button mat-raised-button [routerLink]="['/cart', { id:d.id } ]">Add to cart</button>
@@ -10,22 +9,3 @@
 <button routerLink="/cart">go to cart</button>
 <button (click)="clearCart()">empty the cart</button>
 
-
-<!-- <section class="example-section">
-        <label id='d' class="example-margin"></label>
-        <mat-radio-group id='d'[(ngModel)]="milkOptions">
-          <mat-radio-button class="example-margin" value="Milk">Milk</mat-radio-button>
-          <mat-radio-button class="example-margin" value="LOW FAT">Low Fat</mat-radio-button>
-          <mat-radio-button class="example-margin" value="SOY">Soy</mat-radio-button>
-        </mat-radio-group>
-      </section> -->
-<!-- <br />
-      <section class="example-section">
-        <label id='d' class="example-margin"></label>
-        <mat-radio-group id='d' [(ngModel)]="drinkSize">
-          <mat-radio-button class="example-margin" value="Small">Small</mat-radio-button>
-          <mat-radio-button class="example-margin" value="Medium">Medium</mat-radio-button>
-          <mat-radio-button class="example-margin" value="Large">Large</mat-radio-button>
-        </mat-radio-group>
-      </section>
-      <br /> -->

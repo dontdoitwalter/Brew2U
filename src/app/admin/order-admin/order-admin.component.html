@@ -1,10 +1,10 @@
-<a href="/admin/useradmin">Go to user admin</a>
+<button mat-raised-button routerLink="/admin/useradmin">User Admin</button>
+<button mat-raised-button routerLink="/admin/orderadmin">Order Admin</button>
+<button mat-raised-button routerLink="/admin/storesadmin">Store Admin</button>
 <br />
-<a href="/admin/orderadmin">Go to order admin</a>
 <br />
-<a href="/admin/storesadmin">Go to store admin</a>
-
-
-
-<p *ngFor="let d of drinks.drink"> {{ d.price }} {{ d.drinkName }}</p>
+<br />
+A list of all orders placed
+<br />
+<p *ngFor="let d of drinks.drink"> ID: {{d.id}} Coffee Ordered: {{ d.drinkName }} Price: ${{d.price}}</p>
 <!-- {{ drinks | json }} -->
