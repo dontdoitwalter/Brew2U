@@ -57,7 +57,8 @@ import { OrderAdminComponent } from './admin/order-admin/order-admin.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { StoresComponent } from './admin/stores/stores.component';
 import { AddStoreComponent } from './admin/add-store/add-store.component';
-import { UpdateStoreComponent } from './admin/update-store/update-store.component';
+import { UpdateStoreComponent } from './admin/update-store/update-store.component'
+import { ProductComponent } from './product/product.component';
 
 
 @NgModule({
@@ -80,6 +81,7 @@ import { UpdateStoreComponent } from './admin/update-store/update-store.componen
     StoresComponent,
     AddStoreComponent,
     UpdateStoreComponent
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
