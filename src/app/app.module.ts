@@ -40,7 +40,7 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 
 import { MenuComponent } from './components/menu/menu.component';
-// import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ProductService } from './services/product/product.service';
 import { UserService } from './services/user/user.service';
 import { AlluserService } from './services/alluser.service';
@@ -66,7 +66,7 @@ import { DisplayStoresComponent } from './components/display-stores/display-stor
     AboutComponent,
 
     MenuComponent,
-    // UserProfileComponent,
+    UserProfileComponent,
     RegisterComponent,
     HomeComponent,
     ContactComponent,
