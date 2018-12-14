@@ -19,18 +19,28 @@ import { Order } from 'src/app/models/orderModel';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
+  error = '';
+  order: Order[];
 
-  constructor(private service: ProductService,
+  constructor(private router: Router,
     private orderservice: OrdersService,
-    private order: Order[],
     ) { }
 
    
 
   ngOnInit() {
 
-    // this.order = this.orderservice.getOrders();
+    this.displayOrders();
+   
   
 
   }
+
+  displayOrders(): void {
+    this.orderservice.getOrders().subscribe(Order => {
+      this.order = Order
+      console.log(this.order)
+    })
+  }
+
 }
