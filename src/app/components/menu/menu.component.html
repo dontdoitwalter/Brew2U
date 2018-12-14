@@ -1,10 +1,11 @@
 <p *ngFor="let d of products">
-  {{ d.drinkName }} {{d.drinkSize}} ${{ d.price }}:
-  <mat-card>
-    <mat-card-content>
-      <button mat-raised-button [routerLink]="['/cart', { id:d.id } ]">Add to cart</button>
-    </mat-card-content>
-  </mat-card>
+ <!-- : {{ d.drinkName }} ({{d.drinkSize}}) ${{ d.price }} -->
+  <!-- <mat-card> -->
+    <!-- <mat-card-content> -->
+      <button  [routerLink]="['/cart', { id:d.id } ]">Add</button>
+    <!-- </mat-card-content> -->
+     {{ d.drinkName }} ({{d.drinkSize}}) ${{ d.price }}
+  <!-- </mat-card> -->
 </p>
 <button routerLink="/cart">go to cart</button>
 <button (click)="clearCart()">empty the cart</button>

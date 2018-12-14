@@ -1,6 +1,6 @@
-<button mat-raised-button routerLink="/admin/useradmin">To User Admin</button>
-<button mat-raised-button routerLink="/admin/orderadmin">To Order Admin</button>
-<button mat-raised-button routerLink="/admin/storesadmin">To Order Admin</button>
+<button mat-raised-button routerLink="/admin/useradmin">User Admin</button>
+<button mat-raised-button routerLink="/admin/orderadmin">Order Admin</button>
+<button mat-raised-button routerLink="/admin/storesadmin">Order Admin</button>
 
 
 <!-- <p>
@@ -15,47 +15,47 @@ update-store works!
 
 
 <!-- {{ onestore.store | json }} -->
-{{ onestore.store.storeName | json }}
-{{ onestore.store.id | json }}
+<!-- {{ onestore.store.storeName | json }}
+{{ onestore.store.id | json }} -->
 
 <mat-card>
     <form>
-        <p>updating store # {{onestore.store.id}}</p>
+        <p>updating store # {{onestore?.store?.id}}</p>
         <mat-form-field appearance="outline">
-            <input matInput placeholder="{{onestore.store.id}}" [(ngModel)]="id" name="id" required>
+            <input matInput placeholder="{{onestore?.store?.id}}" [(ngModel)]="id" name="id" required>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <input matInput placeholder="{{onestore.store.storeName}}" [(ngModel)]="storeName" name="storeName"
+            <input matInput placeholder="{{onestore?.store?.storeName}}" [(ngModel)]="storeName" name="storeName"
                 required>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <input matInput placeholder="{{onestore.store.streetAddress}}" [(ngModel)]="streetAddress" name="streetAddress"
+            <input matInput placeholder="{{onestore?.store?.streetAddress}}" [(ngModel)]="streetAddress" name="streetAddress"
                 required>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <input matInput placeholder="{{onestore.store.storeState}}" [(ngModel)]="storeState" name="storeState"
+            <input matInput placeholder="{{onestore?.store?.storeState}}" [(ngModel)]="storeState" name="storeState"
                 required>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <input matInput placeholder="{{onestore.store.storeCity}}" [(ngModel)]="storeCity" name="storeCity"
+            <input matInput placeholder="{{onestore?.store?.storeCity}}" [(ngModel)]="storeCity" name="storeCity"
                 required>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <input matInput placeholder="{{onestore.store.storeZip}}" [(ngModel)]="storeZip" name="storeZip" required>
+            <input matInput placeholder="{{onestore?.store?.storeZip}}" [(ngModel)]="storeZip" name="storeZip" required>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <input matInput placeholder="{{onestore.store.storePhone}}" [(ngModel)]="storePhone" name="storePhone"
+            <input matInput placeholder="{{onestore?.store?.storePhone}}" [(ngModel)]="storePhone" name="storePhone"
                 required>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <input matInput placeholder="{{onestore.store.storeHours}}" [(ngModel)]="storeHours" name="storeHours">
+            <input matInput placeholder="{{onestore?.store?.storeHours}}" [(ngModel)]="storeHours" name="storeHours">
         </mat-form-field>
 
         <mat-card-actions>
