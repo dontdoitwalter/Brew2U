@@ -1,13 +1,17 @@
 {
   "name": "brew2u",
   "version": "0.0.0",
+  "engines":{
+    "node":"8.11.4"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall":"ng build --prod",
+    "start":"serve -s dist/brew2u"
   },
   "private": true,
   "dependencies": {

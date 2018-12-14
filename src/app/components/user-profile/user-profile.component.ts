@@ -42,4 +42,5 @@ export class UserProfileComponent implements OnInit {
       console.log(this.order)
     })
   }
+
 }
