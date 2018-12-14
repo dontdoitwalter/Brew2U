@@ -1,21 +1,18 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-   {{ title }}!
-  </h1>
-  
+<div class="header">
+  <a href="/home"><img src="../assets/logo.png" alt="logo" style="width:200px;"></a>
+  <mat-menu #appMenu="matMenu">
+    <button mat-menu-item routerLink="/menu">Our Menu</button>
+     <button mat-menu-item routerLink="/about">About Us</button>
+    <button mat-menu-item routerLink="/cart">cart</button>
+    <button mat-menu-item routerLink="/checkout">checkout</button>
+    <button mat-menu-item routerLink="/home">Home/Login</button>
+    <button mat-menu-item routerLink="/userprofile">user profile</button>
+    <button mat-menu-item routerLink="/register">sign up!!</button>
+    <button mat-menu-item routerLink="/admin">admin</button>
+    <button mat-menu-item (click)="logout()">logout</button>
+  </mat-menu>
+     <button mat-raised-button [matMenuTriggerFor]="appMenu">
+        <img src="../assets/baseline_list_black_18dp.png" alt="icon" style="float:right;width:40px;">
+    </button>
 </div>
-<h2>Here are some links to help you start Drinkin Coffee: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://starbucks.com">Order Here</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">Login</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
 <router-outlet></router-outlet>

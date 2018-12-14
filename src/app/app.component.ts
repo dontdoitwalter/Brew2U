@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { AuthenticationService } from '../app/services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  // @HostListener("window:onbeforeunload",["$event"])
+  // clearLocalStorage(event){
+  //     localStorage.clear();
+  // }
+
+  // "window:beforeunload" 
+
   public title = 'brew2u';
+
+  constructor(
+    private authenticationService: AuthenticationService,
+    private router: Router,
+  ) { }
+
+  logout() {
+    this.authenticationService.logout();
+    this.router.navigate([`/home`]);
+    window.alert("LOGGED OUT");
+  }
 }
