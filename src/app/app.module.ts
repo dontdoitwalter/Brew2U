@@ -56,7 +56,6 @@ import { AdminComponent } from './admin/admin/admin.component';
 import { AddStoreComponent } from './admin/add-store/add-store.component';
 import { UpdateStoreComponent } from './admin/update-store/update-store.component';
 import { StoresComponent } from './admin/stores/stores.component';
-import { ProductComponent } from '../app/components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +75,6 @@ import { ProductComponent } from '../app/components/product/product.component';
     StoresComponent,
     AddStoreComponent,
     UpdateStoreComponent,
-    ProductComponent,
   ],
   imports: [
     BrowserModule,

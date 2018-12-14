@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 //import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ProductService } from 'src/app/services/product/product.service';
 //import { UserService } from 'src/app/services/user/user.service';
-import { ProductComponent } from '../product/product.component';
+// import { ProductComponent } from '../product/product.component';
 //import { NotificationService } from '../../services/notification.service';
 import { OrdersService } from '../../services/orders/orders.service';
 

@@ -9,16 +9,19 @@
 
     <!-- {{ this.onestore | json }} -->
 
-    <button mat-raised-button (click)="addStore()">ADD STORE</button>
+    <button mat-raised-button (click)="addStore()">ADD A STORE</button>
 </mat-card-actions>
+<mat-card>
 <p *ngFor="let d of stores.stores"> {{ d.storeName }}
-    <mat-card>
-        <form>
+    <!-- <mat-card> -->
+        <!-- <form> -->
             <mat-card-actions>
                 <button mat-raised-button (click)="gotoUpdate(d.id)">UPDATE</button>
-            </mat-card-actions>
-            <mat-card-actions>
+            <!-- </mat-card-actions>
+            <mat-card-actions> -->
                 <button mat-raised-button (click)="deleteStore(d.id)">DELETE</button>
             </mat-card-actions>
-        </form>
-    </mat-card>
+        <!-- </form> -->
+    <!-- </mat-card> -->
+</p>
+</mat-card>

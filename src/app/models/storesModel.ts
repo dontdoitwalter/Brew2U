@@ -1,4 +1,4 @@
-import { Hours } from "./hours";
+// import { Hours } from "./hours";
 
 export interface Store {
     id: number;
@@ -8,5 +8,5 @@ export interface Store {
     storeCity: string,
     storeZip: number,
     storePhone: string,
-    storeHours: Hours,
+    storeHours: string,
 }
