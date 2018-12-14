@@ -15,6 +15,7 @@ import { Order } from 'src/app/models/orderModel';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
+
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
@@ -62,3 +63,4 @@ export class UserProfileComponent implements OnInit {
 
   // applyFilter() {
   //   this.listData.filter = this.searchKey.trim().toLowerCase();
+
