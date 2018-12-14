@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Item } from '../../models/item.entity';
 import { ProductService } from '../../services/product/product.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -18,7 +19,8 @@ export class CartComponent implements OnInit {
   
   constructor(
     private activatedRoute: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -104,9 +106,10 @@ export class CartComponent implements OnInit {
   }
 
   submitCart() {
-    console.log(this.items);
+    this.router.navigate([`/checkout`]);
   }
 
+  
 }
 
 
