@@ -28,7 +28,7 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit() {
 
-    //this.order = this.orderservice.getOrders();
+     //this.order = this.orderservice.getOrders();
   
 
   }
