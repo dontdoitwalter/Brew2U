@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Drink } from '../../models/drinkModel';
 import { Observable } from "rxjs";
+import { Order } from 'src/app/models/orderModel';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -28,8 +29,8 @@ getProduct(): Observable<Drink[]> {
   return this.http.get<Drink[]>(`https://brew2userver.herokuapp.com/drink/alldrinks`, httpOptions)
 }
 
-getOrders(id: number) : Observable<Drink[] > {
-   return this.http.get<Drink[]>(`https://brew2userver.herokuapp.com/user/${{ id }}/pastorders`, httpOptions)
+getOrders() : Observable<Order[] > {
+   return this.http.get<Order[]>(`https://brew2userver.herokuapp.com/user/:id/pastorders`, httpOptions)
  }
 
 findOneProduct(id: number): Drink {
