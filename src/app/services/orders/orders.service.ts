@@ -30,7 +30,9 @@ getProduct(): Observable<Drink[]> {
 }
 
 getOrders() : Observable<Order[] > {
-   return this.http.get<Order[]>(`https://brew2userver.herokuapp.com/user/:id/pastorders`, httpOptions)
+  var userID =localStorage.getItem('user')
+   console.log(userID)
+   return this.http.get<Order[]>(`https://brew2userver.herokuapp.com/user/${{ userID }}/pastorders`, httpOptions)
  }
 
 findOneProduct(id: number): Drink {

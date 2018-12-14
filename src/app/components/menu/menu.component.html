@@ -8,7 +8,7 @@ What Coffee Shops do we work with?</p>
     <!-- <mat-card-content> -->
       <button  [routerLink]="['/cart', { id:d.id } ]">Add</button>
     <!-- </mat-card-content> -->
-     {{ d.drinkName }} ({{d.drinkSize}}) ${{ d.price }}
+     {{ d.drinkName }} ({{d.drinkSize}}) {{ d.price }}
   <!-- </mat-card> -->
 </p>
 <button routerLink="/cart">go to cart</button>
