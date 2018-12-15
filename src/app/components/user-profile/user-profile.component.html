@@ -12,7 +12,19 @@
 
 </div> -->
 
+<!-- {{ order.data.drinks | json }} -->
+<p> Past Orders </p>
+<p *ngFor="let d of order?.data?.drinks"> {{ d.drinkName }} {{ d.price }} {{ d.price }} {{ d.drinkSize }} {{ d.drinkDescription }} </p>
+
+<!-- <p *ngFor="let d of order.data.drinks"> {{ order.data.drinks.drinkName }} {{ order.data.drinks.price }} {{ order.data.drinks.price }} {{ order.data.drinks.drinkSize }} {{ order.data.drinks.drinkDescription }} </p> -->
+
+
 <div class="search-div">
-  <button mat-raised-button  (click)="onCreate()">
+  <button  mat-raised-button  (click)="onCreate()">
     <mat-icon>add</mat-icon>Create  
 Order  </button>
+
+<p *ngFor="let d of Orders"></p>
+<div class="data">
+ 
+</div>

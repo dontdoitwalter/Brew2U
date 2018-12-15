@@ -35,6 +35,8 @@ export class AuthenticationService {
       // SAM /////////////////// fix this
       if (user && user) {
           localStorage.setItem('token', user.sessiontoken);
+          localStorage.setItem('user', user.user);
+          // localStorage.setItem('userID', user.id);
       }
 
       return user;

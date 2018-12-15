@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Item } from '../../models/item.entity';
+import { OrderEnt } from '../../models/order.entity';
 import { ProductService } from '../../services/product/product.service'
 import { Router } from '@angular/router';
+import { StoresService } from 'src/app/services/stores/stores.service';
+import { OrdersService } from 'src/app/services/orders/orders.service';
+
 
 @Component({
   selector: 'app-checkout',
@@ -15,15 +19,19 @@ export class CheckoutComponent implements OnInit {
   private delivery: number = 0;
   private Tax: number = 0;
   private subtotal: number = 0;
-
+  error = '';
+  stores = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService,
     private router: Router,
+    public storesservice: StoresService,
+    private orderservice: OrdersService,
   ) { }
 
   ngOnInit() {
+    this.displayStores()
     this.activatedRoute.params.subscribe(params => {
       var id = params['id'];
       if (id) {
@@ -70,14 +78,13 @@ export class CheckoutComponent implements OnInit {
     this.delivery = 3;
     this.Tax = 0;
     this.items = [];
-     
+
     let cart = JSON.parse(localStorage.getItem('cart'));
     for (var i = 0; i < cart.length; i++) {
       let item = JSON.parse(cart[i]);
       this.items.push({
         product: item.product,
         quantity: item.quantity,
-
       });
       this.subtotal += (item.product.price * item.quantity);
       this.Tax = (this.subtotal * .07);
@@ -104,4 +111,45 @@ export class CheckoutComponent implements OnInit {
     localStorage.removeItem('cart');
     this.loadCart();
   }
+
+
+  submitCart() {}
+
+
 }
+
+  displayStores(): void {
+    this.storesservice.getStores().subscribe(Store => {
+      this.stores = Store
+      // console.log('from checkout', this.stores)
+    })
+  }
+
+  submitCart(): void {
+    this.items = [];
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    for (var i = 0; i < cart.length; i++) {
+      let item = JSON.parse(cart[i]);
+      console.log('inside', item.product)
+      delete item.product.id
+      console.log('inside', item.product)
+      // this.orderservice.addorder(item.productdrinkName, item.productprice, item.productdrinkSize, item.productdrinkDescription)
+      this.orderservice.addorder()
+    }
+    // console.log('asdsada', cart)
+  }
+}
+
+  // (drinkName, price, drinkSize, drinkDescription) {
+  //   this.orderservice.addorder(drinkName, price, drinkSize, drinkDescription)
+  //     .subscribe(
+  //       data => {
+  //         console.log('something')
+  //         // this.router.navigate([`/admin/storesadmin`]);
+  //       },
+  //       error => {
+  //         this.error = error;
+  //         console.log(this.error)
+  //       });
+  // }
+

@@ -1,10 +1,14 @@
 <br />
-<br />
-<br />
-
-<p> select store here</p>
-
-
+<form>
+  <mat-form-field>
+    <mat-select placeholder="Store Name" [(ngModel)]="selectedStore" name="name">
+      <mat-option *ngFor="let name of stores.stores" [value]="name.storeName">
+             {{name.storeName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p> Selected Store: {{selectedStore}} </p>
+</form>
 
 <table>
   <tr>
@@ -44,4 +48,6 @@
 </table>
 <button routerLink="/menu" >return to the menu</button>
 <button (click)="clearCart()">empty the cart</button>
-<button (click)="submitCart()">Submit Order!</button>
+<button (click)="submitCart()">Place Order!</button>
+<!-- <button (click)="submitCart(item.product.drinkName, item.product.price, item.product.drinkSize, item.product.drinkDescription)">Submit Order!</button> -->
+

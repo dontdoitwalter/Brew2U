@@ -21,25 +21,20 @@ import { Order } from 'src/app/models/orderModel';
 export class UserProfileComponent implements OnInit {
   error = '';
   order: Order[];
+  userID =localStorage.getItem('user');
 
   constructor(private router: Router,
     private orderservice: OrdersService,
     ) { }
 
-   
-
   ngOnInit() {
-
-    this.displayOrders();
-   
-  
-
+    this.displayOrders(this.userID);
   }
 
-  displayOrders(): void {
-    this.orderservice.getOrders().subscribe(Order => {
+  displayOrders(userID): void {
+    this.orderservice.getOrders(userID).subscribe(Order => {
       this.order = Order
-      console.log(this.order)
+      console.log('in display orders??', this.order)
     })
   }
 
