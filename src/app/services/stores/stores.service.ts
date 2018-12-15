@@ -45,7 +45,8 @@ export class StoresService {
 
 
   addstore(storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours) {
-    return this.http.post<any>(`https://brew2userver.herokuapp.com/store/create`, { store: { storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours } }, httpOptions)
+    return this.http.post<any>(`https://brew2userver.herokuapp.com/store/create`,
+     { store: { storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours } }, httpOptions)
   }
 
   deleteStore(id) {

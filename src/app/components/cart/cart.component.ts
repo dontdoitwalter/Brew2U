@@ -21,6 +21,7 @@ export class CartComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private productService: ProductService,
     private router: Router,
+
   ) { }
 
   ngOnInit() {
