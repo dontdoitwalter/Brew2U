@@ -30,10 +30,9 @@ export class OrdersService {
     return this.http.get<Drink[]>(`https://brew2userver.herokuapp.com/drink/alldrinks`, httpOptions)
   }
 
-getOrders() : Observable<Order[] > {
-  var userID =localStorage.getItem('user')
-   console.log(userID)
-   return this.http.get<Order[]>(`https://brew2userver.herokuapp.com/user/${{ userID }}/pastorders`, httpOptions)
+
+getOrders(userID) : Observable<Order[] > {
+   return this.http.get<Order[]>(`https://brew2userver.herokuapp.com/user/${userID}/pastorders`, httpOptions)
  }
 
   findOneProduct(id: number): Drink {

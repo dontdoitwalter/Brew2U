@@ -112,6 +112,12 @@ export class CheckoutComponent implements OnInit {
     this.loadCart();
   }
 
+
+  submitCart() {}
+
+
+}
+
   displayStores(): void {
     this.storesservice.getStores().subscribe(Store => {
       this.stores = Store
@@ -146,10 +152,4 @@ export class CheckoutComponent implements OnInit {
   //         console.log(this.error)
   //       });
   // }
-
-
-
-
-
-
 
