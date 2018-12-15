@@ -29,8 +29,8 @@ getProduct(): Observable<Drink[]> {
   return this.http.get<Drink[]>(`https://brew2userver.herokuapp.com/drink/alldrinks`, httpOptions)
 }
 
-getOrders() : Observable<Order[] > {
-   return this.http.get<Order[]>(`https://brew2userver.herokuapp.com/user/:id/pastorders`, httpOptions)
+getOrders(userID) : Observable<Order[] > {
+   return this.http.get<Order[]>(`https://brew2userver.herokuapp.com/user/${userID}/pastorders`, httpOptions)
  }
 
 findOneProduct(id: number): Drink {

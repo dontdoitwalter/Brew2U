@@ -104,4 +104,8 @@ export class CheckoutComponent implements OnInit {
     localStorage.removeItem('cart');
     this.loadCart();
   }
+
+  submitCart() {}
+
+
 }
