@@ -113,11 +113,6 @@ export class CheckoutComponent implements OnInit {
   }
 
 
-  submitCart() {}
-
-
-}
-
   displayStores(): void {
     this.storesservice.getStores().subscribe(Store => {
       this.stores = Store
