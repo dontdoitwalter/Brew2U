@@ -21,6 +21,7 @@ export class CheckoutComponent implements OnInit {
   private subtotal: number = 0;
   error = '';
   stores = [];
+  orders = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -120,31 +121,14 @@ export class CheckoutComponent implements OnInit {
     })
   }
 
-  submitCart(): void {
-    this.items = [];
+  submitCart() {
     let cart = JSON.parse(localStorage.getItem('cart'));
     for (var i = 0; i < cart.length; i++) {
       let item = JSON.parse(cart[i]);
-      console.log('inside', item.product)
       delete item.product.id
-      console.log('inside', item.product)
-      // this.orderservice.addorder(item.productdrinkName, item.productprice, item.productdrinkSize, item.productdrinkDescription)
-      this.orderservice.addorder()
+      // console.log('inside', item.product)
+      // console.log('dn', item.product.drinkName)
+      this.orderservice.addorder(item.product.drinkName, item.product.price, item.product.drinkSize, item.product.drinkDescription)
     }
-    // console.log('asdsada', cart)
-  }
-}
-
-  // (drinkName, price, drinkSize, drinkDescription) {
-  //   this.orderservice.addorder(drinkName, price, drinkSize, drinkDescription)
-  //     .subscribe(
-  //       data => {
-  //         console.log('something')
-  //         // this.router.navigate([`/admin/storesadmin`]);
-  //       },
-  //       error => {
-  //         this.error = error;
-  //         console.log(this.error)
-  //       });
-  // }
-
+  }  
+} 

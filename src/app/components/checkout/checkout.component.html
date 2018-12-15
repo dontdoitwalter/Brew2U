@@ -3,7 +3,7 @@
   <mat-form-field>
     <mat-select placeholder="Store Name" [(ngModel)]="selectedStore" name="name">
       <mat-option *ngFor="let name of stores.stores" [value]="name.storeName">
-             {{name.storeName}}
+        {{name.storeName}}
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -34,10 +34,10 @@
     <td style="text-align:right;">${{subtotal | number:'1.2-2'}}</td>
   </tr>
   <tr>
-    <td style="text-align:right;" colspan="6">$Sales Tax: </td>
+    <td style="text-align:right;" colspan="6">Sales Tax: </td>
     <td style="text-align:right;">${{ Tax | number:'1.2-2'}}</td>
   </tr>
-<tr>
+  <tr>
     <td style="text-align:right;" colspan="6">Delivery Fee: </td>
     <td style="text-align:right;"> ${{ delivery | number:'1.2-2' }}</td>
   </tr>
@@ -45,9 +45,7 @@
     <td style="text-align:right;" colspan="6">Total: </td>
     <td style="text-align:right;"> ${{ total | number:'1.2-2'}}</td>
   </tr>
+  <button (click)="submitCart()">Place Order!</button>
 </table>
-<button routerLink="/menu" >return to the menu</button>
+<button routerLink="/menu">return to the menu</button>
 <button (click)="clearCart()">empty the cart</button>
-<button (click)="submitCart()">Place Order!</button>
-<!-- <button (click)="submitCart(item.product.drinkName, item.product.price, item.product.drinkSize, item.product.drinkDescription)">Submit Order!</button> -->
-
