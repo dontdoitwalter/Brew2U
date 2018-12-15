@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Drink } from '../../models/drinkModel';
 import { Observable } from "rxjs";
 import { map } from 'rxjs/operators';
+import { Order } from 'src/app/models/orderModel';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -29,9 +30,11 @@ export class OrdersService {
     return this.http.get<Drink[]>(`https://brew2userver.herokuapp.com/drink/alldrinks`, httpOptions)
   }
 
-  getOrders(id: number): Observable<Drink[]> {
-    return this.http.get<Drink[]>(`https://brew2userver.herokuapp.com/user/${{ id }}/pastorders`, httpOptions)
-  }
+getOrders() : Observable<Order[] > {
+  var userID =localStorage.getItem('user')
+   console.log(userID)
+   return this.http.get<Order[]>(`https://brew2userver.herokuapp.com/user/${{ userID }}/pastorders`, httpOptions)
+ }
 
   findOneProduct(id: number): Drink {
     this.http.get<Drink[]>(`https://brew2userver.herokuapp.com/drink/getdrink/${{ id }}`, httpOptions)

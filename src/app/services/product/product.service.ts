@@ -3,9 +3,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Product } from '../../models/productModel';
 import { Observable } from "rxjs";
 
+
 @Injectable({
   providedIn: 'root'
 })
+
 
 export class ProductService {
 
@@ -54,5 +56,4 @@ export class ProductService {
     return -1;
   }
 }
-
 

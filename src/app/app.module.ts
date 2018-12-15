@@ -38,6 +38,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
+
 import { MenuComponent } from './components/menu/menu.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ProductService } from './services/product/product.service';
@@ -58,10 +59,12 @@ import { UpdateStoreComponent } from './admin/update-store/update-store.componen
 import { StoresComponent } from './admin/stores/stores.component';
 import { DisplayStoresComponent } from './components/display-stores/display-stores.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
+
     MenuComponent,
     UserProfileComponent,
     RegisterComponent,
@@ -77,6 +80,7 @@ import { DisplayStoresComponent } from './components/display-stores/display-stor
     AddStoreComponent,
     UpdateStoreComponent,
     DisplayStoresComponent,
+
   ],
   imports: [
     BrowserModule,

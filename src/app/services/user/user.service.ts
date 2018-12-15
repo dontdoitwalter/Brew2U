@@ -11,10 +11,12 @@ const httpOptions = {
   })
 };
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
   userSecondAddress: string = ''
@@ -50,4 +52,5 @@ getUsers() : Observable<User[] > {
 deleteUser(id) {
   return this.http.delete<any>(`https://brew2userver.herokuapp.com/user/delete/${id}` , httpOptions)
 }
+
 }
