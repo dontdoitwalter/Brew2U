@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
   // id: number; 
   // drinkName: string;
   // price: number;
-  private products: Product[];
+  public products: Product[];
 
   constructor(private router: Router,
     private productservice: ProductService
