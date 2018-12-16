@@ -13,9 +13,15 @@ Address: {{ order?.data?.userAddress }} {{ order?.data?.userSecondAddress }}
 <br>
 {{ order?.data?.userCity }}, {{ order?.data?.userState }} {{ order?.data?.userZipcode }}
 </p>
-<button (click)="updateProfile()">Update Profile?</button>
+<button routerLink="/updateuser">Update Profile?</button>
+<!-- <button (click)="updateProfile()">Update Profile?</button> -->
 <br />
 <br />
 <!-- {{ order.data.drinks | json }} -->
-<b> Recent items ordered : </b>
-<p *ngFor="let d of order?.data?.drinks"> {{ d.drinkName }} Size: {{ d.drinkSize }} ${{ d.price }}</p>
+
+<b> Last 5 items ordered : </b>
+<p *ngFor="let d of order?.data?.drinks | reverse | slice:0:5; let i=index"  > {{ d.drinkName }} Size: {{ d.drinkSize }} ${{ d.price }}
+</p>
+<!-- 
+<p *ngFor="let d of order?.data?.drinks " > {{ d.drinkName }} Size: {{ d.drinkSize }} ${{ d.price }}
+</p> -->

@@ -1,6 +1,7 @@
-<p><button routerLink="/displaystores">Shops</button>
-  What Coffee Shops do we work with?</p>
-
+  <p> What Coffee Shops do we work with?  </p>
+  <button routerLink="/displaystores">Coffee Shops</button>
+  <br>
+  <br>
 <b>OUR COFFEE MENU</b>
 <p *ngFor="let d of products">
   <button [routerLink]="['/cart', { id:d.id } ]">Add</button>
