@@ -126,9 +126,12 @@ export class CheckoutComponent implements OnInit {
     for (var i = 0; i < cart.length; i++) {
       let item = JSON.parse(cart[i]);
       delete item.product.id
-      // console.log('inside', item.product)
-      // console.log('dn', item.product.drinkName)
+      console.log('inside', item.product)
+      console.log('dn', item.product.drinkName)
       this.orderservice.addorder(item.product.drinkName, item.product.price, item.product.drinkSize, item.product.drinkDescription)
-    }
-  }  
+    } 
+    // localStorage.removeItem('cart');
+    // alert("Thank you for the order.");
+    // this.router.navigate([`/menu`]);
+  }
 } 

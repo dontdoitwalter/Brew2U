@@ -1,3 +1,4 @@
+
 <br />
 <form>
   <mat-form-field>
@@ -45,7 +46,11 @@
     <td style="text-align:right;" colspan="6">Total: </td>
     <td style="text-align:right;"> ${{ total | number:'1.2-2'}}</td>
   </tr>
+  <!-- <mat-spinner> -->
   <button (click)="submitCart()">Place Order!</button>
+<!-- </mat-spinner> -->
 </table>
+<br />
+<br />
 <button routerLink="/menu">return to the menu</button>
 <button (click)="clearCart()">empty the cart</button>
