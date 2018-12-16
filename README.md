@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. Clone the repo
 2. Open your CLI and navigate to the applications folder
 3. Run npm install
-4. Run mg update
+4. Run ng update
 5. Run ng serve -o to run the application. This should open a web browser on port 4200.
 6. Create an account or login.
 
