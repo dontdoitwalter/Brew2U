@@ -58,13 +58,13 @@ import { AddStoreComponent } from './admin/add-store/add-store.component';
 import { UpdateStoreComponent } from './admin/update-store/update-store.component';
 import { StoresComponent } from './admin/stores/stores.component';
 import { DisplayStoresComponent } from './components/display-stores/display-stores.component';
-
+import { ReversePipe } from '../app/pipe/reverse.pipe';
+import { UpdateUserProfileComponent } from './components/update-user-profile/update-user-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-
     MenuComponent,
     UserProfileComponent,
     RegisterComponent,
@@ -80,7 +80,8 @@ import { DisplayStoresComponent } from './components/display-stores/display-stor
     AddStoreComponent,
     UpdateStoreComponent,
     DisplayStoresComponent,
-
+    ReversePipe,
+    UpdateUserProfileComponent,
   ],
   imports: [
     BrowserModule,

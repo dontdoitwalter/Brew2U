@@ -71,20 +71,23 @@ export class CartComponent implements OnInit {
     this.delivery = 3;
     this.Tax = 0;
     this.items = [];
-     
+    
+    if (localStorage.getItem('cart') == null) {
+  console.log('empty cart')
+    } else {
     let cart = JSON.parse(localStorage.getItem('cart'));
     for (var i = 0; i < cart.length; i++) {
       let item = JSON.parse(cart[i]);
       this.items.push({
         product: item.product,
         quantity: item.quantity,
-
       });
       this.subtotal += (item.product.price * item.quantity);
       this.Tax = (this.subtotal * .07);
       this.delivery = 3;
       this.total = this.Tax + this.subtotal + this.delivery;
     }
+  }
   }
 
   remove(id: number): void {
@@ -112,16 +115,3 @@ export class CartComponent implements OnInit {
 
   
 }
-
-
-// submitOrder   (storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours) {
-//   this.storesservice.addstore(storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours)
-//     .subscribe(
-//       data => {
-//         this.router.navigate([`/menu`]);
-//       },
-//       error => {
-//         this.error = error;
-//       });
-//     }
-  // }

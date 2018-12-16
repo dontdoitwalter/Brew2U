@@ -122,16 +122,22 @@ export class CheckoutComponent implements OnInit {
   }
 
   submitCart() {
-    let cart = JSON.parse(localStorage.getItem('cart'));
-    for (var i = 0; i < cart.length; i++) {
-      let item = JSON.parse(cart[i]);
-      delete item.product.id
-      console.log('inside', item.product)
-      console.log('dn', item.product.drinkName)
-      this.orderservice.addorder(item.product.drinkName, item.product.price, item.product.drinkSize, item.product.drinkDescription)
-    } 
-    // localStorage.removeItem('cart');
-    // alert("Thank you for the order.");
-    // this.router.navigate([`/menu`]);
+    {
+      let cart = JSON.parse(localStorage.getItem('cart'));
+      for (var i = 0; i < cart.length; i++) {
+        let item = JSON.parse(cart[i]);
+        delete item.product.id
+        console.log('inside', item.product)
+        console.log('dn', item.product.drinkName)
+        this.orderservice.addorder(item.product.drinkName, item.product.price, item.product.drinkSize, item.product.drinkDescription)
+      }
+    }
+    this.finishOrder()
   }
-} 
+
+  finishOrder() {
+    localStorage.removeItem('cart');
+    this.router.navigate([`/menu`]);
+    // alert("Thank you for the order.");
+  }
+}
