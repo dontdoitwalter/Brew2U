@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-// import { ProductService } from '../../services/product/product.service'
 import { OrdersService } from 'src/app/services/orders/orders.service';
 
 @Component({
@@ -17,11 +16,11 @@ export class OrderAdminComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.displayMenu()
+    this.displayAllorders()
   }
 
-  displayMenu(): void {
-    this.ordersservice.getProduct().subscribe(Drink => {
+  displayAllorders(): void {
+    this.ordersservice.getAllorders().subscribe(Drink => {
       this.drinks = Drink
       console.log(this.drinks)
     })

@@ -4,7 +4,7 @@
 <br />
 <br />
 <br />
-A list of all orders placed
+<b>A list of all orders placed.</b>
 <br />
-<p *ngFor="let d of drinks.drink"> ID: {{d.id}} Coffee Ordered: {{ d.drinkName }} Price: ${{d.price}}</p>
-<!-- {{ drinks | json }} -->
+<p *ngFor="let d of drinks.drink"> ORDER#: {{d.id}} Coffee Ordered: {{ d.drinkName }} Size: ({{ d.drinkSize }}) Price: ${{d.price}}</p>
+<!-- {{ drinks | json } -->

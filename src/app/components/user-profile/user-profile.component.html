@@ -1,18 +1,21 @@
-<!-- <h1>
-  " "'s Profile
-</h1>
-<div>
-  <input class="btn btn-default btn-block" type="button" value="Create Order" (click)="getCurrentPosition()">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+<h1> Welcome {{ order?.data?.username }}!</h1>
 
   <h3>Profile Info/Account Info</h3>
-  <textarea matInput placeholder="message" [(ngModel)]="message" name="message" rows="8" required>
-  </textarea>
-
-  <h4>Recent Orders</h4>
-
-</div> -->
-
-<div class="search-div">
-  <button mat-raised-button  (click)="onCreate()">
-    <mat-icon>add</mat-icon>Create  
-Order  </button>
+<p>
+Username: {{ order?.data?.username }}
+<br>
+Name: {{ order?.data?.firstName }} {{ order?.data?.lastName }}
+<br>
+Phone Number: {{ order?.data?.phoneNumber }}
+<br>
+Address: {{ order?.data?.userAddress }} {{ order?.data?.userSecondAddress }} 
+<br>
+{{ order?.data?.userCity }}, {{ order?.data?.userState }} {{ order?.data?.userZipcode }}
+</p>
+<button (click)="updateProfile()">Update Profile?</button>
+<br />
+<br />
+<!-- {{ order.data.drinks | json }} -->
+<b> Recent items ordered : </b>
+<p *ngFor="let d of order?.data?.drinks"> {{ d.drinkName }} Size: {{ d.drinkSize }} ${{ d.price }}</p>

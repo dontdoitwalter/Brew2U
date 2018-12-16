@@ -1,10 +1,15 @@
-<br />
-<br />
-<br />
 
-<p> select store here</p>
-
-
+<br />
+<form>
+  <mat-form-field>
+    <mat-select placeholder="Store Name" [(ngModel)]="selectedStore" name="name">
+      <mat-option *ngFor="let name of stores.stores" [value]="name.storeName">
+        {{name.storeName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p> Selected Store: {{selectedStore}} </p>
+</form>
 
 <table>
   <tr>
@@ -30,10 +35,10 @@
     <td style="text-align:right;">${{subtotal | number:'1.2-2'}}</td>
   </tr>
   <tr>
-    <td style="text-align:right;" colspan="6">$Sales Tax: </td>
+    <td style="text-align:right;" colspan="6">Sales Tax: </td>
     <td style="text-align:right;">${{ Tax | number:'1.2-2'}}</td>
   </tr>
-<tr>
+  <tr>
     <td style="text-align:right;" colspan="6">Delivery Fee: </td>
     <td style="text-align:right;"> ${{ delivery | number:'1.2-2' }}</td>
   </tr>
@@ -41,7 +46,11 @@
     <td style="text-align:right;" colspan="6">Total: </td>
     <td style="text-align:right;"> ${{ total | number:'1.2-2'}}</td>
   </tr>
+  <!-- <mat-spinner> -->
+  <button (click)="submitCart()">Place Order!</button>
+<!-- </mat-spinner> -->
 </table>
-<button routerLink="/menu" >return to the menu</button>
+<br />
+<br />
+<button routerLink="/menu">return to the menu</button>
 <button (click)="clearCart()">empty the cart</button>
-<button (click)="submitCart()">Submit Order!</button>
