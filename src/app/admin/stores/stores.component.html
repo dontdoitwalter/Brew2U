@@ -1,112 +1,27 @@
-<a href="/admin/useradmin">Go to user admin</a>
-<br />
-<a href="/admin/orderadmin">Go to order admin</a>
-<br />
-<a href="/admin/storesadmin">Go to store admin</a>
-
-<!-- {{ stores | json }}  -->
-
 <mat-card-actions>
-    <button mat-raised-button (click)="addStore()">ADD STORE</button>
+        <button mat-raised-button routerLink="/admin/useradmin">User Admin</button>
+        <button mat-raised-button routerLink="/admin/orderadmin">Order Admin</button>
+        <button mat-raised-button routerLink="/admin/storesadmin">Store Admin</button>
+    <br />
+    <br />
+    <!-- THIS WORKS!!! -->
+    <!-- {{ this.stores.stores | json }} -->
+
+    <!-- {{ this.onestore | json }} -->
+
+    <button mat-raised-button (click)="addStore()">ADD A STORE</button>
 </mat-card-actions>
+<mat-card>
 <p *ngFor="let d of stores.stores"> {{ d.storeName }}
-    <mat-card>
-        <form>
+    <!-- <mat-card> -->
+        <!-- <form> -->
             <mat-card-actions>
-                <button mat-raised-button (click)="updateStore(d.id)">UPDATE</button>
-                <!-- <button mat-raised-button (click)="updateStore(d.id)">UPDATE</button> -->
-                <!-- <button mat-raised-button (click)="updateStore(d.id, d.storeName, d.streetAddress, d.storeState, d.storeCity, d.storeZip, d.storePhone, d.storeHours)">Update Store</button> -->
-            </mat-card-actions>
-            <mat-card-actions>
+                <button mat-raised-button (click)="gotoUpdate(d.id)">UPDATE</button>
+            <!-- </mat-card-actions>
+            <mat-card-actions> -->
                 <button mat-raised-button (click)="deleteStore(d.id)">DELETE</button>
             </mat-card-actions>
-        </form>
-    </mat-card>
+        <!-- </form> -->
+    <!-- </mat-card> -->
 </p>
-
-
-
-
-<!-- <mat-form-field appearance="outline">
-            <mat-label>Store ID</mat-label>
-            <input matInput type="text" [(ngModel)]="d.id" name="id" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <mat-label>Store Name</mat-label>
-            <input matInput [(ngModel)]="d.storeName" name="storeName" required>
-        </mat-form-field> -->
-
-<!-- <mat-form-field appearance="outline">
-            <mat-label>Address</mat-label>
-            <input matInput [(ngModel)]="d.streetAddress" name="streetAddress" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <mat-label>First Name</mat-label>
-            <input matInput [(ngModel)]="d.storeState" name="storeState" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <mat-label>Last Name</mat-label>
-            <input matInput placeholder="Last Name" [(ngModel)]="lastName" name="lastName" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <mat-label>Address</mat-label>
-            <input matInput placeholder="Address" [(ngModel)]="userAddress" name="userAddress" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <mat-label>Apt / Suite</mat-label>
-            <input matInput placeholder="Apt / Suite" [(ngModel)]="userSecondAddress" name="userSecondAddress">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <mat-label>City</mat-label>
-            <input matInput placeholder="City" [(ngModel)]="userCity" name="userCity">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <mat-label>State</mat-label>
-            <input matInput placeholder="example: IN" [(ngModel)]="userState" name="userState">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <mat-label>Zip Code</mat-label>
-            <input matInput placeholder="Zip Code" [(ngModel)]="userZipcode" name="userZipcode">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <mat-label>317-555-5555</mat-label>
-            <input matInput type="tel" placeholder="317-555-5555" [(ngModel)]="phoneNumber" name="phoneNumber">
-        </mat-form-field>
- -->
-
-<!-- <mat-card-actions>
-            <button mat-raised-button (click)="updateStore(d.id)">UPDATE</button>
-            <button mat-raised-button (click)="updateStore(d.id, d.storeName, d.streetAddress, d.storeState, d.storeCity, d.storeZip, d.storePhone, d.storeHours)">Update Store</button>
-        </mat-card-actions>
-        <mat-card-actions>
-            <button mat-raised-button (click)="deleteStore(d.id)">DELETE</button>
-        </mat-card-actions>
-    </form>
 </mat-card>
-</p> -->
-
-
-
-<!-- {{ stores | json }}  -->
-
-<!-- {{ stores | json }} -->
-<!-- 
-id: number;
-storeName: string,
-streetAddress: string,
-storeState: string,
-storeCity: string,
-storeZip: number,
-storePhone: string,
-storeHours: string,
-
-id, storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours -->

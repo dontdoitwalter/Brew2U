@@ -1,18 +1,14 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div class="header">
-  <!-- <h1 href="/">Brew2u</h1> -->
-  <!-- <img src="../assets/" alt="icon" width="20px" /> -->
-
-  <a href="/home">
-    <img src="../assets/logo.png" alt="logo" style="width:200px;">
-  </a>
-
+  <a href="/home"><img src="../assets/logo.png" alt="logo" style="width:200px;"></a>
   <mat-menu #appMenu="matMenu">
-    <button mat-menu-item routerLink="/menu">Our Menu</button>
-     <button mat-menu-item routerLink="/about">About Us</button>
-    <!-- <button mat-menu-item routerLink="/contact">Contact Us</button> -->
+    <button mat-menu-item routerLink="/menu">coffee menu</button>
+     <button mat-menu-item routerLink="/about">about us</button>
     <button mat-menu-item routerLink="/cart">cart</button>
     <button mat-menu-item routerLink="/checkout">checkout</button>
+    <!-- <button mat-menu-item routerLink="/home">Home/Login</button> -->
+    <button mat-menu-item routerLink="/userprofile">profile</button>
+    <button mat-menu-item routerLink="/register">register</button>
+    <!-- <button mat-menu-item routerLink="/admin">admin</button> -->
      <!-- <button mat-menu-item routerLink="/customize">Customize</button> -->
     <button mat-menu-item routerLink="/home">Home/Login</button>
     <button mat-menu-item routerLink="/userprofile">user profile</button>
@@ -20,14 +16,8 @@
     <button mat-menu-item routerLink="/admin">admin</button>
     <button mat-menu-item (click)="logout()">logout</button>
   </mat-menu>
-
      <button mat-raised-button [matMenuTriggerFor]="appMenu">
         <img src="../assets/baseline_list_black_18dp.png" alt="icon" style="float:right;width:40px;">
     </button>
-
-<!-- 
-    <button mat-raised-button (click)="logout()">
-        <img class="logouticon" src="../assets/1172496.svg" alt="logout" width="20px" />
-    </button> -->
 </div>
 <router-outlet></router-outlet>

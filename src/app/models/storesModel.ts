@@ -1,3 +1,5 @@
+// import { Hours } from "./hours";
+
 export interface Store {
     id: number;
     storeName: string,
@@ -7,4 +9,4 @@ export interface Store {
     storeZip: number,
     storePhone: string,
     storeHours: string,
-    }
+}

@@ -53,10 +53,10 @@ export class UserAdminComponent implements OnInit {
               },
         error => {
           this.error = error;
-          console.log('id sam ', id, this.error)
+          // console.log('id ', id, this.error)
           // console.log(this.error);
           //// fix this sam!!! throws an error on delete
-          this.getAllUsers()  
+          this.getAllUsers()
         }); 
-      }
+      } 
 }

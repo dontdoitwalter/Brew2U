@@ -1,31 +1,35 @@
-<!-- {{i}} {{item}} -->
+<!-- <table mat-table>
+      <td mat-cell *ngFor="let d of products">
+  <button [routerLink]="['/cart', { id:d.id } ]">
+    {{ d.drinkName }}<br />
+    ({{d.drinkSize}})<br />
+    ${{ d.price }}
+  </button>
+    </td>
+</table> -->
+
+<!--         
 <p *ngFor="let d of products">
-  {{ d.drinkName }} ${{ d.price }}:
-  <mat-card>
-    <mat-card-content>
-      <button mat-raised-button [routerLink]="['/cart', { id:d.id } ]">Add to cart</button>
-    </mat-card-content>
-  </mat-card>
+  <button [routerLink]="['/cart', { id:d.id } ]">Add<br>
+    {{ d.drinkName }}<br>({{d.drinkSize}})<br>${{ d.price }}
+  </button>
+</p> -->
+<!--   
+    </section>
+  </mat-card-content>
+    </mat-card>
+  -->
+  <br />
+<b> What Coffee Shops do we work with? </b>
+<br />
+<button mat-raised-button routerLink="/displaystores">Coffee Shops</button>
+<br>
+<br>
+<b>OUR COFFEE MENU</b>
+<p *ngFor="let d of products">
+  <button mat-raised-button  [routerLink]="['/cart', { id:d.id } ]">Add</button>
+  {{ d.drinkName }} ({{d.drinkSize}}) ${{ d.price }}
 </p>
-<button routerLink="/cart">go to cart</button>
-<button (click)="clearCart()">empty the cart</button>
-
-
-<!-- <section class="example-section">
-        <label id='d' class="example-margin"></label>
-        <mat-radio-group id='d'[(ngModel)]="milkOptions">
-          <mat-radio-button class="example-margin" value="Milk">Milk</mat-radio-button>
-          <mat-radio-button class="example-margin" value="LOW FAT">Low Fat</mat-radio-button>
-          <mat-radio-button class="example-margin" value="SOY">Soy</mat-radio-button>
-        </mat-radio-group>
-      </section> -->
-<!-- <br />
-      <section class="example-section">
-        <label id='d' class="example-margin"></label>
-        <mat-radio-group id='d' [(ngModel)]="drinkSize">
-          <mat-radio-button class="example-margin" value="Small">Small</mat-radio-button>
-          <mat-radio-button class="example-margin" value="Medium">Medium</mat-radio-button>
-          <mat-radio-button class="example-margin" value="Large">Large</mat-radio-button>
-        </mat-radio-group>
-      </section>
-      <br /> -->
+<button mat-raised-button routerLink="/cart">go to cart</button>
+<button mat-raised-button (click)="clearCart()">empty the cart</button>
+<br />

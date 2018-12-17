@@ -1,23 +1,16 @@
-<a href="/admin/useradmin">Go to user admin</a>
+<button mat-raised-button routerLink="/admin/useradmin">User Admin</button>
+<button mat-raised-button routerLink="/admin/orderadmin">Order Admin</button>
+<button mat-raised-button routerLink="/admin/storesadmin">Store Admin</button>
 <br />
-<a href="/admin/orderadmin">Go to order admin</a>
 <br />
-<a href="/admin/storesadmin">Go to store admin</a>
-
-<!-- NEED GET ALL USERS TO DO THIS -->
-<!-- <p *ngFor="let d of stores.stores"> {{ d.storeName }} </p> -->
-<!-- {{ data | json }} -->
-
-<p *ngFor="let d of this.users.data"> {{ d.username }}
+<p>A listing of the user database</p>
+<p *ngFor="let d of this.users.data">ID: {{d.id}} Username: {{ d.username }}
     <!-- <button mat-raised-button (click)="updateUser(d.id)">Update User ... do we need this?</button> -->
     <button mat-raised-button (click)="deleteUser(d.id)">Delete User</button>
 </p>
-
-<!-- {{ this.user | json }} -->
-
 <br />
 <br />
-<a>TO ADD NEW USERS</a>
+<a>TO ADD NEW USER (including as admin)</a>
 <mat-card>
     <form>
         <mat-form-field appearance="outline">

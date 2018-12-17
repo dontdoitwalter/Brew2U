@@ -26,8 +26,8 @@ export class StoresService {
     return this.http.get<Store[]>(`https://brew2userver.herokuapp.com/store/showall`)
   }
 
-  findOneStore(id: number): Observable<any> {
-    return this.http.get<any>(`https://brew2userver.herokuapp.com/store/show/${id}`, httpOptions);
+  findOneStore(id: number): Observable<Store[]> {
+    return this.http.get<Store[]>(`https://brew2userver.herokuapp.com/store/show/${id}`, httpOptions);
    }
 
   private getSelectedIndex(id: number) {
@@ -45,7 +45,8 @@ export class StoresService {
 
 
   addstore(storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours) {
-    return this.http.post<any>(`https://brew2userver.herokuapp.com/store/create`, { store: { storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours } }, httpOptions)
+    return this.http.post<any>(`https://brew2userver.herokuapp.com/store/create`,
+     { store: { storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours } }, httpOptions)
   }
 
   deleteStore(id) {

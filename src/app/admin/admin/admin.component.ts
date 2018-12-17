@@ -22,7 +22,7 @@ export class AdminComponent implements OnInit {
     this.authenticationService.login(username, password)
       .subscribe(
         data => {
-          this.router.navigate([`/admin/main`]);
+          this.router.navigate([`/admin/orderadmin`]);
         },
         error => {
           this.error = error;
