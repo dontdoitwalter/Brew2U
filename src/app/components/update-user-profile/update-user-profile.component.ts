@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OrdersService } from '../../services/orders/orders.service';
 import { Order } from 'src/app/models/orderModel';
+import { UserService } from '../../services/user/user.service';
+import { User } from '../../models/userModel';
 
 @Component({
   selector: 'app-update-user-profile',
@@ -16,6 +18,7 @@ export class UpdateUserProfileComponent implements OnInit {
 
   constructor(private router: Router,
     private orderservice: OrdersService,
+    private userservice: UserService,
   ) { }
 
   ngOnInit() {
@@ -29,6 +32,18 @@ export class UpdateUserProfileComponent implements OnInit {
     })
   }
 
+  getOneUser(userID) : void {
+  this.userservice.getOneUser(userID)
+      .subscribe(
+        data => {
+          console.log(data);
+          // this.router.navigate([`/menu`]);
+        },
+        error => {
+          this.error = error;
+        });
+      }
+  
 // updateUser(email, firstName, lastName, userAddress, userSecondAddress, userCity, userState ,userZipcode, phoneNumber) {
   // console.log(email, firstName, lastName, userAddress, userSecondAddress, userCity, userState ,userZipcode, phoneNumber);
 // then go to profile page. 
