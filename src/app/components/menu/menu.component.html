@@ -27,7 +27,7 @@
 <br>
 <b>OUR COFFEE MENU</b>
 <p *ngFor="let d of products">
-  <button mat-raised-button  [routerLink]="['/cart', { id:d.id } ]">Add</button>
+  <button mat-mini-fab  [routerLink]="['/cart', { id:d.id } ]">+</button>
   {{ d.drinkName }} ({{d.drinkSize}}) ${{ d.price }}
 </p>
 <button mat-raised-button routerLink="/cart">go to cart</button>
