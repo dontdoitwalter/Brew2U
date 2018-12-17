@@ -4,4 +4,4 @@ export interface Drink {
     price: number,
     drinkSize: string,
     drinkDescription: string,
-    }
+}

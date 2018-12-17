@@ -1,7 +1,6 @@
-export interface Drink {
+export interface Order {
     id: number;
     drinkName: string,
     price: number,
     drinkSize: string,
-    drinkDescription: string,
-    }
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { StoresService } from 'src/app/services/stores/stores.service';
+import { Store } from '../../models/storesModel';
 
 @Component({
   selector: 'app-stores',
@@ -9,6 +10,7 @@ import { StoresService } from 'src/app/services/stores/stores.service';
 })
 export class StoresComponent implements OnInit {
   error = '';
+  store: Store;
   stores = []
  
   constructor(private router: Router,
@@ -37,14 +39,12 @@ export class StoresComponent implements OnInit {
   deleteStore(id): void {
     this.storesservice.deleteStore(id)
       .subscribe(Store => {
-        this.stores = Store;
+        this.store = Store;
         console.log('delete store are we ever here');
         this.displayStores();
       },
         error => {
           this.error = error;
-          // console.log(this.error);
-          //// fix this sam!!! throws an error on delete
           this.displayStores();
         });
   }

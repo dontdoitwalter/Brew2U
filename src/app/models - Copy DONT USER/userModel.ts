@@ -1,7 +1,4 @@
-import { Drink } from "./drinkModel";
-
-export interface Order {
-    drinks: Drink [];
+export interface User {
     id: number;
     email: string,
     password: string,
@@ -15,4 +12,4 @@ export interface Order {
     firstName: string,
     lastName: string,
     isAdmin: boolean,
-}
+    }

@@ -1,3 +1,5 @@
+import { Drink } from "./drinkModel";
+
 export interface User {
     id: number;
     email: string,
@@ -12,4 +14,7 @@ export interface User {
     firstName: string,
     lastName: string,
     isAdmin: boolean,
+    drink: Drink [];
     }
+
+ 
