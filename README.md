@@ -1,5 +1,7 @@
 # Brew2u
 
+# USES ANGULAR 7
+
 Brew2U is a coffee delivery service application that allows the user to create an account and order coffee from their favorite coffee shop and have it delivered to them wherever they may be.
 
 ## To Run Locally
