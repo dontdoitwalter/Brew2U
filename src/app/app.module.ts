@@ -60,6 +60,7 @@ import { StoresComponent } from './admin/stores/stores.component';
 import { DisplayStoresComponent } from './components/display-stores/display-stores.component';
 import { ReversePipe } from '../app/pipe/reverse.pipe';
 import { UpdateUserProfileComponent } from './components/update-user-profile/update-user-profile.component';
+import { ThankyouComponent } from './components/thankyou/thankyou.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { UpdateUserProfileComponent } from './components/update-user-profile/upd
     DisplayStoresComponent,
     ReversePipe,
     UpdateUserProfileComponent,
+    ThankyouComponent,
   ],
   imports: [
     BrowserModule,

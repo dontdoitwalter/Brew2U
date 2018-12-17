@@ -11,7 +11,7 @@ const httpOptions = {
   })
 };
 
-console.log('all users', localStorage.token);
+console.log('in allusers service', localStorage.token);
 
 @Injectable({
   providedIn: 'root'

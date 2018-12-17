@@ -18,6 +18,8 @@ import { AddStoreComponent } from './admin/add-store/add-store.component';
 import { UpdateStoreComponent } from './admin/update-store/update-store.component';
 import { DisplayStoresComponent } from './components/display-stores/display-stores.component';
 import { UpdateUserProfileComponent } from './components/update-user-profile/update-user-profile.component';
+import { ThankyouComponent } from './components/thankyou/thankyou.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -38,6 +40,9 @@ const routes: Routes = [
   { path: 'admin/updatestoreadmin', component: UpdateStoreComponent },
   { path: 'displaystores', component: DisplayStoresComponent },
   { path: 'updateuser', component: UpdateUserProfileComponent },
+  { path: 'thankyou', component: ThankyouComponent },
+
+
 ];
 
 @NgModule({

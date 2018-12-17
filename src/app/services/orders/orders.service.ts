@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Drink } from '../../models/drinkModel';
 import { Observable } from "rxjs";
-import { map } from 'rxjs/operators';
 import { Order } from 'src/app/models/orderModel';
 
 const httpOptions = {
@@ -37,10 +36,10 @@ export class OrdersService {
     return this.http.get<Order[]>(`https://brew2userver.herokuapp.com/user/${userID}/pastorders`, httpOptions)
   }
 
-  findOneProduct(id: number): Drink {
-    this.http.get<Drink[]>(`https://brew2userver.herokuapp.com/drink/getdrink/${{ id }}`, httpOptions)
-    console.log('this is drinks in the find  ', id)
-    return this.drinks[this.getSelectedIndex(id)];
+  findOneProduct(id: number): Observable<Drink[]> {
+    return this.http.get<Drink[]>(`https://brew2userver.herokuapp.com/drink/getdrink/${{ id }}`, httpOptions)
+    // console.log('this is drinks in the find  ', id)
+    // return this.drinks[this.getSelectedIndex(id)];
   }
 
   private getSelectedIndex(id: number) {

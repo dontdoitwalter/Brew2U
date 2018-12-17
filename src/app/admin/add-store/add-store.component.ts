@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormControl, NgModel } from '@angular/forms'
 import { HttpClient } from '@angular/common/http';
@@ -10,7 +10,7 @@ import { StoresService } from '../../services/stores/stores.service';
   templateUrl: './add-store.component.html',
   styleUrls: ['./add-store.component.css']
 })
-export class AddStoreComponent implements OnInit {
+export class AddStoreComponent {
   error = '';
 
   constructor(private router: Router,
@@ -18,13 +18,11 @@ export class AddStoreComponent implements OnInit {
     private http: HttpClient,
   ) { }
 
-  ngOnInit() {
-  }
-
-
+  
   addNewStore(storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours) {
     this.storesservice.addstore(storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours)
-      .subscribe(
+      .subscribe
+      (
         data => {
           this.router.navigate([`/admin/storesadmin`]);
         },
