@@ -1,3 +1,10 @@
+# Before You Get Started
+Before we dive into the project lets make sure we have everything we need.
+Here is what we used:
+<ul>
+  <li> [Visual Studio Code](https://code.visualstudio.com/download) </li>
+</ul>
+
 # Brew2u
 
 # USES ANGULAR 7
@@ -18,5 +25,3 @@ Brew2U is a coffee delivery service application that allows the user to create a
 1. Launch the [app](https://brew2uclient.herokuapp.com/)
 2. Click Login/Signup depending on whether you have an account or not (if you created an account locally, you still need to create an      account on this deployed version to login).
 3. As a user you are able to update and delete your account, you can also add the beverage(s) you would like to your cart and purchase      for delivery. After ordering a beverage it will appear on your profile as a previously ordered beverage.
-
-
