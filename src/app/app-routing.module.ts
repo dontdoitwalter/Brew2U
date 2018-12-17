@@ -19,18 +19,18 @@ import { UpdateStoreComponent } from './admin/update-store/update-store.componen
 import { DisplayStoresComponent } from './components/display-stores/display-stores.component';
 import { UpdateUserProfileComponent } from './components/update-user-profile/update-user-profile.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'contact', component: ContactComponent  },
-  { path: 'checkout', component: CheckoutComponent  },
-  { path: 'about', component: AboutComponent },
-  { path: 'userprofile', component: UserProfileComponent },
-  { path: 'menu', component: MenuComponent },
-  { path: 'cart', component: CartComponent },
+  {
+   path: 'menu', canActivate: [AuthGuard] , component: MenuComponent},
+  { path: 'checkout', canActivate: [AuthGuard] , component: CheckoutComponent  },
+  { path: 'userprofile', canActivate: [AuthGuard] , component: UserProfileComponent },
+  { path: 'cart', canActivate: [AuthGuard] , component: CartComponent },
   { path: 'admin/main', component: MainComponent },
   { path: 'admin/orderadmin', component: OrderAdminComponent },
   { path: 'admin/useradmin', component: UserAdminComponent },
@@ -41,7 +41,8 @@ const routes: Routes = [
   { path: 'displaystores', component: DisplayStoresComponent },
   { path: 'updateuser', component: UpdateUserProfileComponent },
   { path: 'thankyou', component: ThankyouComponent },
-
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent  },
 
 ];
 
