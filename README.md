@@ -15,7 +15,7 @@ Brew2U is a coffee delivery service application that allows the user to create a
 
 ## To run this application on the web.
 
-1. Launch the app(this should be a link to the deployed client)
+1. Launch the [app](https://brew2uclient.herokuapp.com/)
 2. Click Login/Signup depending on whether you have an account or not (if you created an account locally, you still need to create an      account on this deployed version to login).
 3. As a user you are able to update and delete your account, you can also add the beverage(s) you would like to your cart and purchase      for delivery. After ordering a beverage it will appear on your profile as a previously ordered beverage.
 
