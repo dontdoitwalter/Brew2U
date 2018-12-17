@@ -17,6 +17,7 @@ const httpOptions = {
 export class StoresService {
   error = '';
   stores = []
+  store: Store
 
   constructor(
     private http: HttpClient,
@@ -26,23 +27,22 @@ export class StoresService {
     return this.http.get<Store[]>(`https://brew2userver.herokuapp.com/store/showall`)
   }
 
-  findOneStore(id: number): Observable<Store[]> {
-    return this.http.get<Store[]>(`https://brew2userver.herokuapp.com/store/show/${id}`, httpOptions);
+  findOneStore(id: number): Observable<any> {
+    return this.http.get<any>(`https://brew2userver.herokuapp.com/store/show/${id}`, httpOptions);
    }
 
-  private getSelectedIndex(id: number) {
-    for (var i = 0; i < this.stores.length; i++) {
-      if (this.stores[i].id == id) {
-        return i;
-      }
-    }
-    return -1;
-  }
+  // private getSelectedIndex(id: number) {
+  //   for (var i = 0; i < this.stores.length; i++) {
+  //     if (this.stores[i].id == id) {
+  //       return i;
+  //     }
+  //   }
+  //   return -1;
+  // }
 
   updateStore(id, storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours) {
-    return this.http.put<any>(`https://brew2userver.herokuapp.com/store/update/${id}`, { store: { storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours } }, httpOptions)
+    return this.http.put<Store[]>(`https://brew2userver.herokuapp.com/store/update/${id}`, { store: { storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours } }, httpOptions)
   }
-
 
   addstore(storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours) {
     return this.http.post<any>(`https://brew2userver.herokuapp.com/store/create`,
