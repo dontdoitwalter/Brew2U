@@ -22,11 +22,16 @@ export class UserProfileComponent implements OnInit {
     this.displayOrders(this.userID);
   }
 
+
   displayOrders(userID): void {
     this.orderservice.getOrders(userID).subscribe(Order => {
       this.order = Order;
       console.log('in display orders??', this.order)
     })
+
+     //this.order = this.orderservice.getOrders();
+  
+
   }
   
 }

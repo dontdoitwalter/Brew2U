@@ -61,6 +61,7 @@ import { DisplayStoresComponent } from './components/display-stores/display-stor
 import { ReversePipe } from '../app/pipe/reverse.pipe';
 import { UpdateUserProfileComponent } from './components/update-user-profile/update-user-profile.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { ThankyouComponent } from './components/thankyou/thankyou.component';
     ReversePipe,
     UpdateUserProfileComponent,
     ThankyouComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -125,7 +127,7 @@ import { ThankyouComponent } from './components/thankyou/thankyou.component';
     MatPaginatorModule,
   ],
   entryComponents: [StoresComponent],
-  providers: [HttpClient, ProductService, UserService, OrdersService, AlluserService],
+  providers: [HttpClient, ProductService, UserService, OrdersService, AlluserService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
