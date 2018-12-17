@@ -1,3 +1,77 @@
+
+
 <p>
-  update-user-profile works!
+Update user profile for username: {{ order?.data?.username }}
 </p>
+<!-- <br>
+Name: {{ order?.data?.firstName }} {{ order?.data?.lastName }}
+<br>
+Phone Number: {{ order?.data?.phoneNumber }}
+<br>
+Address: {{ order?.data?.userAddress }} {{ order?.data?.userSecondAddress }} 
+<br>
+{{ order?.data?.userCity }}, {{ order?.data?.userState }} {{ order?.data?.userZipcode }}
+</p> -->
+
+<mat-card>
+  <form>
+      <mat-form-field appearance="outline">
+          <!-- <mat-label>Email Address</mat-label> -->
+          <input matInput type="email" placeholder="{{order?.data?.email}}" [(ngModel)]="email" name="email" required>
+      </mat-form-field>
+
+      <!-- <mat-form-field appearance="outline"> -->
+          <!-- <mat-label>Username</mat-label> -->
+          <!-- <input matInput placeholder="{{order?.data?.username}}" [(ngModel)]="username" name="username" required> -->
+      <!-- </mat-form-field> -->
+
+      <!-- <mat-form-field appearance="outline"> -->
+          <!-- <mat-label>Password</mat-label> -->
+          <!-- <p>not sure how to do a change password</p> -->
+          <!-- <input matInput placeholder="{{order?.data?.password}}" [(ngModel)]="password" name="password" required> -->
+      <!-- </mat-form-field> -->
+
+      <!-- <label>First Name</label> -->
+      <mat-form-field appearance="outline">
+          <input matInput placeholder="{{order?.data?.firstName}}" [(ngModel)]="firstName" name="firstName" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <!-- <mat-label>{{ order?.data?.lastName }}</mat-label> -->
+          <input matInput placeholder="{{order?.data?.lastName}}" [(ngModel)]="lastName" name="lastName" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <!-- <mat-label>Address</mat-label> -->
+          <input matInput placeholder="{{ order?.data?.userAddress }}" [(ngModel)]="userAddress" name="userAddress" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <!-- <mat-label>Apt / Suite</mat-label> -->
+          <input matInput placeholder="{{ order?.data?.userSecondAddress }}" [(ngModel)]="userSecondAddress" name="userSecondAddress">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <!-- <mat-label>City</mat-label> -->
+          <input matInput placeholder="{{ order?.data?.userCity }}" [(ngModel)]="userCity" name="userCity">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <!-- <mat-label>State</mat-label> -->
+          <input matInput placeholder="{{ order?.data?.userState }}" [(ngModel)]="userState" name="userState">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <!-- <mat-label>Zip Code</mat-label> -->
+          <input matInput placeholder="{{ order?.data?.userZipcode }}" [(ngModel)]="userZipcode" name="userZipcode">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <!-- <mat-label>317-555-5555</mat-label> -->
+          <input matInput type="tel" placeholder="{{ order?.data?.phoneNumber }}" [(ngModel)]="phoneNumber" name="phoneNumber">
+      </mat-form-field>
+<mat-card-actions>
+          <button mat-raised-button (click)="updateUser( order?.data?.email, order?.data?.firstName, order?.data?.lastName, order?.data?.userAddress, order?.data?.userSecondAddress, order?.data?.userCity, order?.data?.userState ,order?.data?.userZipcode, order?.data?.phoneNumber)">UPDATE</button>
+      </mat-card-actions>
+  </form>
+</mat-card>

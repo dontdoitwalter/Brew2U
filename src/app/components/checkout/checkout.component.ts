@@ -80,17 +80,21 @@ export class CheckoutComponent implements OnInit {
     this.Tax = 0;
     this.items = [];
 
-    let cart = JSON.parse(localStorage.getItem('cart'));
-    for (var i = 0; i < cart.length; i++) {
-      let item = JSON.parse(cart[i]);
-      this.items.push({
-        product: item.product,
-        quantity: item.quantity,
-      });
-      this.subtotal += (item.product.price * item.quantity);
-      this.Tax = (this.subtotal * .07);
-      this.delivery = 3;
-      this.total = this.Tax + this.subtotal + this.delivery;
+    if (localStorage.getItem('cart') == null) {
+      console.log('empty cart')
+    } else {
+      let cart = JSON.parse(localStorage.getItem('cart'));
+      for (var i = 0; i < cart.length; i++) {
+        let item = JSON.parse(cart[i]);
+        this.items.push({
+          product: item.product,
+          quantity: item.quantity,
+        });
+        this.subtotal += (item.product.price * item.quantity);
+        this.Tax = (this.subtotal * .07);
+        this.delivery = 3;
+        this.total = this.Tax + this.subtotal + this.delivery;
+      }
     }
   }
 
@@ -122,22 +126,26 @@ export class CheckoutComponent implements OnInit {
   }
 
   submitCart() {
-    {
-      let cart = JSON.parse(localStorage.getItem('cart'));
-      for (var i = 0; i < cart.length; i++) {
-        let item = JSON.parse(cart[i]);
-        delete item.product.id
-        console.log('inside', item.product)
-        console.log('dn', item.product.drinkName)
-        this.orderservice.addorder(item.product.drinkName, item.product.price, item.product.drinkSize, item.product.drinkDescription)
+        if (localStorage.getItem('cart') == null) {
+        alert('EMPTY CART')
+        this.router.navigate([`/menu`]);
+      } else {
+        let cart = JSON.parse(localStorage.getItem('cart'));
+        for (var i = 0; i < cart.length; i++) {
+          let item = JSON.parse(cart[i]);
+          delete item.product.id
+          console.log('inside', item.product)
+          console.log('dn', item.product.drinkName)
+          this.orderservice.addorder(item.product.drinkName, item.product.price, item.product.drinkSize, item.product.drinkDescription)
+        } this.finishOrder()
       }
+      // this.finishOrder()
     }
-    this.finishOrder()
-  }
+  
 
-  finishOrder() {
-    localStorage.removeItem('cart');
-    this.router.navigate([`/menu`]);
-    // alert("Thank you for the order.");
+    finishOrder() {
+      localStorage.removeItem('cart');
+      this.router.navigate([`/thankyou`]);
+      // alert("Thank you for the order.");
+    }
   }
-}

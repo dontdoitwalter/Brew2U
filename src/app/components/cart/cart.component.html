@@ -11,7 +11,7 @@
   </tr>
   <tr *ngFor="let item of items">
     <td style="text-align:center;" colspan="1">
-      <button (click)="remove(item.product.id)">X</button>
+        <button (click)="remove(item.product.id)">X</button>
     </td>
     <td>{{item.product.drinkName}}</td>
     <td style="text-align:right;" colspan="1">{{item.product.drinkSize }}</td>
@@ -19,7 +19,7 @@
     <td style="text-align:right;" colspan="1">{{item.quantity | number:'1.0-0' }}</td>
     <td style="text-align:right;" colspan="1">${{item.product.price * item.quantity | number:'1.2-2' }}</td>
   </tr>
-  <tr>
+  <!-- <tr>
     <td style="text-align:right;" colspan="6">Subtotal: </td>
     <td style="text-align:right;">${{subtotal | number:'1.2-2'}}</td>
   </tr>
@@ -34,8 +34,13 @@
   <tr>
     <td style="text-align:right;" colspan="6">Total: </td>
     <td style="text-align:right;"> ${{ total | number:'1.2-2'}}</td>
-  </tr>
+  </tr> -->
 </table>
-<button routerLink="/menu" >return to the menu</button>
-<button (click)="clearCart()">empty the cart</button>
-<button (click)="submitCart()">Checkout!</button>
+<br />
+<button mat-raised-button color="warn" (click)="submitCart()">Checkout!</button>
+<br />
+<br />
+<button mat-stroked-button routerLink="/menu" >return to menu</button>
+<br />
+<br />
+<button mat-stroked-button (click)="clearCart()">empty the cart</button>
