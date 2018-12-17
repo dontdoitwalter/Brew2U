@@ -1,9 +1,10 @@
 # Before You Get Started
 Before we dive into the project lets make sure we have everything we need.
 Here is what we used:
-<ul>
-  <li> [Visual Studio Code](https://code.visualstudio.com/download) </li>
-</ul>
+1. [Visual Studio Code](https://code.visualstudio.com/download)
+2. [Node.JS](https://nodejs.org/en/download/)
+3. [pgAdmin4](https://www.pgadmin.org/download/)
+
 
 # Brew2u
 
