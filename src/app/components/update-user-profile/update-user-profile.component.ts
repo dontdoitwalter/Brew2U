@@ -15,6 +15,15 @@ export class UpdateUserProfileComponent implements OnInit {
   userID = localStorage.getItem('user');
   error = '';
 orders = [];
+  email:string;
+  firstName:string;
+  lastName:string;
+  userAddress:string;
+  userSecondAddress:string;
+  userCity:string;
+  userState:string;
+  userZipcode:number;
+  phoneNumber:string;
 
   user: User = {
     id: 0,
