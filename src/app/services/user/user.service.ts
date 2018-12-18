@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders }from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../../models/userModel';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json',
+    'Content-Type': 'application/json',
     'Authorization': `${localStorage.token}`,
   })
 };
@@ -16,50 +16,39 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class UserService {
-
-  private currentUserSubject: BehaviorSubject<User>;
-  public currentUser: Observable<User>;
-  userSecondAddress: string = ''
-  isAdmin: boolean = false
+  userSecondAddress: string = '';
+  isAdmin: boolean = false;
+  users = [];
+  user: User;
 
   constructor(private http: HttpClient) {
-    this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
-    this.currentUser = this.currentUserSubject.asObservable();
-}
+  }
 
-public get currentUserValue(): User {
-  return this.currentUserSubject.value;
-}
-
-  register(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState ,userZipcode, phoneNumber, isAdmin) {
-    return this.http.post<any>(`https://brew2userver.herokuapp.com/user/signup`, {user: {email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState ,userZipcode, phoneNumber, isAdmin }})
-    // return this.http.post<any>(`http://localhost:3000/user/signup`, {user: {email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState ,userZipcode, phoneNumber, isAdmin }})
-    .pipe(map(user => {
-          if (user && user) {
-          
+  register(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber, isAdmin) {
+    return this.http.post<any>(`https://brew2userver.herokuapp.com/user/signup`, { user: { email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber, isAdmin } })
+      .pipe(map(user => {
+        if (user && user) {
           localStorage.setItem('token', user.sessionToken);
-          console.log(user)
-          console.log('are we ever here??? user service')
-       }
-      return user;
-  }));
-}
+        }
+        return user;
+      }));
+  }
 
-getUsers() : Observable<User[] > {
-  return this.http.get<User[]>(`https://brew2userver.herokuapp.com/user/allusers`, httpOptions)
-}
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`https://brew2userver.herokuapp.com/user/allusers`, httpOptions)
+  }
 
-deleteUser(id) {
-  return this.http.delete<any>(`https://brew2userver.herokuapp.com/user/delete/${id}` , httpOptions)
-}
+  deleteUser(id) {
+    return this.http.delete<any>(`https://brew2userver.herokuapp.com/user/delete/${id}`, httpOptions)
+  }
 
-getOneUser(id) : Observable<User[] > {
-  return this.http.get<any>(`https://brew2userver.herokuapp.com/user/user/${id}` , httpOptions)
-}
-
-updateUser(id, email, firstName, lastName, userAddress, userSecondAddress, userCity, userState ,userZipcode, phoneNumber) : Observable<User[] > {
-  return this.http.put<any>(`https://brew2userver.herokuapp.com/user/update/${id}` , httpOptions)
-}
+  getOneUser(id): Observable<any> {
+    return this.http.get<any>(`https://brew2userver.herokuapp.com/user/info/${id}`, httpOptions)
+  }
+  
+  updateUser(id, email, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber): Observable<User[]> {
+    return this.http.put<any>(`https://brew2userver.herokuapp.com/user/update/${id}`, httpOptions)
+  }
 
 
 }

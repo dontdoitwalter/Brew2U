@@ -3,7 +3,7 @@ html {
     z-index: -1;
     font-family: 'Roboto', sans-serif;
     opacity: .85;
-    background-image: url("../src/assets/lt.png");
+    background-image: url("../src/assets/med.png");
     width: 100%;
     min-height: 680px;
     /* height: 680px; */

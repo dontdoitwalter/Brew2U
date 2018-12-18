@@ -25,7 +25,6 @@ export class UserAdminComponent implements OnInit {
     this.getAllUsers()
   }
 
-
   getAllUsers(): void {
     this.alluserservice.getUsers().subscribe(User => {
       this.users = User
@@ -37,11 +36,12 @@ export class UserAdminComponent implements OnInit {
     this.userservice.register(email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber, isAdmin)
       .subscribe(
         user => {
+          // this.router.navigate([`admin/useradmin`]);
           window.alert("USER CREATED");
         },
         error => {
           this.error = error;
-        });
+        }); 
   }
 
   deleteUser(id) : void {
@@ -53,9 +53,6 @@ export class UserAdminComponent implements OnInit {
               },
         error => {
           this.error = error;
-          // console.log('id ', id, this.error)
-          // console.log(this.error);
-          //// fix this sam!!! throws an error on delete
           this.getAllUsers()
         }); 
       } 

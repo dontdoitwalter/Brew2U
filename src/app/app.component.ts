@@ -8,12 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // @HostListener("window:onbeforeunload",["$event"])
-  // clearLocalStorage(event){
-  //     localStorage.clear();
-  // }
-
-  // "window:beforeunload" 
 
   public title = 'brew2u';
 
@@ -24,6 +18,7 @@ export class AppComponent {
 
   logout() {
     this.authenticationService.logout();
+    localStorage.getItem('user');
     this.router.navigate([`/home`]);
     window.alert("LOGGED OUT");
   }
