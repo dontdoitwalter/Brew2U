@@ -16,6 +16,14 @@ import { ActivatedRoute } from '@angular/router';
 export class UpdateStoreComponent implements OnInit {
   error = '';
   id: number;
+  storeName:string;
+  streetAddress:string;
+  storeState:string;
+  storeCity:string;
+  storeZip:string;
+  storePhone:string;
+  storeHours:string;
+  
   store: Store = {
     id: 0,
     storeName: '',
