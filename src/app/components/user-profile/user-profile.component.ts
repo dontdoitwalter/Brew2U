@@ -29,7 +29,7 @@ export class UserProfileComponent implements OnInit {
       console.log('in display orders??', this.order)
     })
 
-     //this.order = this.orderservice.getOrders();
+     
   
 
   }
