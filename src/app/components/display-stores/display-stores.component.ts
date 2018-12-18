@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { StoresService } from 'src/app/services/stores/stores.service';
+import { AllStoresFromService } from '../../admin/stores/stores.component';
 
 @Component({
   selector: 'app-display-stores',
@@ -19,9 +20,10 @@ export class DisplayStoresComponent implements OnInit {
     this.displayStores()
 
   }
+  
   displayStores(): void {
-    this.storesservice.getStores().subscribe(Store => {
-      this.stores = Store
+    this.storesservice.getStores().subscribe((Store: AllStoresFromService) => {
+      this.stores = Store.stores
       console.log(this.stores)
     })
   }

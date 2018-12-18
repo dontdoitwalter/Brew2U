@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { StoresService } from 'src/app/services/stores/stores.service';
 import { Store } from '../../models/storesModel';
+import { AllStoresFromService } from '../../admin/stores/stores.component';
 
 @Component({
   selector: 'app-stores',
@@ -12,7 +13,7 @@ export class StoresComponent implements OnInit {
   error = '';
   store: Store;
   stores = []
- 
+   
   constructor(private router: Router,
     private storesservice: StoresService,
      ) { }
@@ -30,8 +31,8 @@ export class StoresComponent implements OnInit {
   }
 
   displayStores(): void {
-    this.storesservice.getStores().subscribe(Store => {
-      this.stores = Store
+    this.storesservice.getStores().subscribe((Store: AllStoresFromService) => {
+      this.stores = Store.stores
       console.log(this.stores)
     })
   }
@@ -50,3 +51,7 @@ export class StoresComponent implements OnInit {
   }
 }
 
+
+export interface AllStoresFromService {
+  stores:stores[];
+}

@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-// import { FormBuilder, FormGroup, FormControl, NgModel } from '@angular/forms'
-// import { HttpClient } from '@angular/common/http';
 import { Store } from '../../models/storesModel';
 import { StoresService } from '../../services/stores/stores.service';
 import { ActivatedRoute } from '@angular/router';
-
-// document.body.appendChild(form);
+import { AllStoresFromService } from '../../admin/stores/stores.component';
 
 @Component({
   selector: 'app-update-store',
@@ -47,7 +44,6 @@ export class UpdateStoreComponent implements OnInit {
 
   ngOnInit() {
     this.findOneStoreNow(this.id);
-    // console.log("are we in update ", this.id)
   }
 
   findOneStoreNow(id) {
@@ -74,8 +70,8 @@ export class UpdateStoreComponent implements OnInit {
           this.error = error;
           console.log(this.error)
         });
-    this.storesservice.getStores().subscribe(Store => {
-      this.stores = Store
+        this.storesservice.getStores().subscribe((Store: AllStoresFromService) => {
+          this.stores = Store.stores
       console.log(this.stores)
       this.router.navigate([`/admin/storesadmin`]);
     })
