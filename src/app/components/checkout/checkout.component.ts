@@ -6,6 +6,7 @@ import { ProductService } from '../../services/product/product.service'
 import { Router } from '@angular/router';
 import { StoresService } from 'src/app/services/stores/stores.service';
 import { OrdersService } from 'src/app/services/orders/orders.service';
+import { AllStoresFromService } from '../../admin/stores/stores.component';
 
 
 @Component({
@@ -120,11 +121,15 @@ export class CheckoutComponent implements OnInit {
 
 
   displayStores(): void {
-    this.storesservice.getStores().subscribe(Store => {
-      this.stores = Store
-      // console.log('from checkout', this.stores)
+    this.storesservice.getStores().subscribe((Store: AllStoresFromService) => {
+      this.stores = Store.stores
+      console.log(this.stores)
     })
   }
+
+
+
+
 
   submitCart() {
         if (localStorage.getItem('cart') == null) {
