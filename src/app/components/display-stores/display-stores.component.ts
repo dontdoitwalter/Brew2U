@@ -9,7 +9,7 @@ import { StoresService } from 'src/app/services/stores/stores.service';
 })
 export class DisplayStoresComponent implements OnInit {
   error = '';
-  stores:string;
+  stores=[]
 
   constructor(private router: Router,
     private storesservice: StoresService,
