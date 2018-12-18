@@ -14,16 +14,20 @@ import { Drink } from '../../models/drinkModel';
 export class UpdateUserProfileComponent implements OnInit {
   userID = localStorage.getItem('user');
   error = '';
-orders = [];
-  email:string;
-  firstName:string;
-  lastName:string;
-  userAddress:string;
-  userSecondAddress:string;
-  userCity:string;
-  userState:string;
-  userZipcode:number;
-  phoneNumber:string;
+  orders = [];
+  email: string;
+  firstName: string;
+  lastName: string;
+  userAddress: string;
+  userSecondAddress: string;
+  userCity: string;
+  userState: string;
+  userZipcode: number;
+  phoneNumber: string;
+  password: string;
+  username: string;
+  isAdmin: boolean;
+  drink: [];
 
   user: User = {
     id: 0,
@@ -58,23 +62,6 @@ orders = [];
     lastName: '',
     isAdmin: false,
   };
-  
-  // user: User = {
-  //   id: 0,
-  //   email: "",
-  //   password: "",
-  //   username: "",
-  //   userAddress: "",
-  //   userSecondAddress: "",
-  //   userState: "",
-  //   userCity: "",
-  //   userZipcode: 0,
-  //   phoneNumber: "",
-  //   firstName: "",
-  //   lastName: "",
-  //   isAdmin: false,
-  //   drink: [],
-  // };
 
   constructor(private router: Router,
     private orderservice: OrdersService,
@@ -82,40 +69,39 @@ orders = [];
   ) { }
 
   ngOnInit() {
-   this.getOneUser(this.userID);
-    // this.displayOrders(this.userID);
+    this.getOneUser(this.userID);
   }
 
-  // displayOrders(userID): void {
-  //   this.orderservice.getOrders(userID).subscribe(Orders => {
-  //     this.orders = Orders;
-  //     console.log('in display orders??', this.orders)
-  //   })
-  // }
-
-  getOneUser(userID) : void {
-  this.userservice.getOneUser(userID)
+  getOneUser(userID): void {
+    this.userservice.getOneUser(userID)
       .subscribe(
         userObjFromserver => {
           this.user = userObjFromserver.user;
           console.log(this.user)
-                // user => {
-        //   user = user.user 
-        //   console.log(user);
-          // this.router.navigate([`/menu`]);
-        },
+             },
         error => {
           this.error = error;
         });
-      }
-  
-// updateUser(email, firstName, lastName, userAddress, userSecondAddress, userCity, userState ,userZipcode, phoneNumber) {
+  }
+
+  updateUser(id, email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber, isAdmin) {
+    this.userservice.updateUser(id, email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber, isAdmin)
+    .subscribe(
+      data => {
+      },
+      error => {
+        this.error = error;
+        console.log(this.error)
+      });
+    }
+  }
+   
   // console.log(email, firstName, lastName, userAddress, userSecondAddress, userCity, userState ,userZipcode, phoneNumber);
-// then go to profile page. 
+  // then go to profile page. 
 
-updateUser() {
-  console.log('hello')
-}
+  // updateUser() {
+  //   console.log('hello')
+  // }
 
 
-}
+
