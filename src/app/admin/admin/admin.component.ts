@@ -9,6 +9,8 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class AdminComponent implements OnInit {
   error = '';
+  username:string;
+  password:string;
 
   constructor(
     private router: Router,

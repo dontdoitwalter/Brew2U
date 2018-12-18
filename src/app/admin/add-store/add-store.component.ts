@@ -12,6 +12,13 @@ import { StoresService } from '../../services/stores/stores.service';
 })
 export class AddStoreComponent {
   error = '';
+  storeState:string;
+  storeCity:string;
+  storeZip:number;
+  storePhone:string;
+  storeHours:string;
+  storeName:string;
+  streetAddress:string;
 
   constructor(private router: Router,
     private storesservice: StoresService,
