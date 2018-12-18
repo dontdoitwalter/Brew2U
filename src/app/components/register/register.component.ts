@@ -16,6 +16,17 @@ export class RegisterComponent implements OnInit {
   users = [];
   error = '';
   isAdmin = false;
+  email:string;
+  username:string;
+  password:string;
+  firstName:string;
+  lastName:string;
+  userAddress:string;
+  userSecondAddress:string;
+  userCity:string;
+  userState:string;
+  userZipcode:number;
+  phoneNumber:string;
 
   constructor(private router: Router,
     private userservice: UserService,
