@@ -1,16 +1,20 @@
 <h1> Brew2u </h1>
 
 <h3> Before You Get Started </h3>
-Before we dive into the project lets make sure we have everything we need.
-Here is what we used:
-1. [Visual Studio Code](https://code.visualstudio.com/download)
-2. [Node.JS](https://nodejs.org/en/download/)
-3. [pgAdmin4](https://www.pgadmin.org/download/)
-4. [Postman](https://www.getpostman.com/apps)
+<p>Before we dive into the project lets make sure we have everything we need.</p>
+<p>Here is what we used:</p>
 
+# Downloads
+    1. [Visual Studio Code](https://code.visualstudio.com/download)
 
+    2. [Node.JS](https://nodejs.org/en/download/)
+
+    3. [pgAdmin4](https://www.pgadmin.org/download/)
+
+    4. [Postman](https://www.getpostman.com/apps)
+<p>
 Brew2U is a coffee delivery service application that allows the user to create an account and order coffee from their favorite coffee shop and have it delivered to them wherever they may be.
-
+</p>
 <h3> Running Locally </h3>
 
 1. Clone the repo
