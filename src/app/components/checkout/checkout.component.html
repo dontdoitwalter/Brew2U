@@ -4,7 +4,7 @@
 <form>
   <mat-form-field>
     <mat-select placeholder="Select Coffee Shop" [(ngModel)]="selectedStore" name="name">
-      <mat-option *ngFor="let name of stores.stores" [value]="name.storeName">
+      <mat-option *ngFor="let store of stores" [value]="name.storeName">
         {{name.storeName}}
       </mat-option>
     </mat-select>

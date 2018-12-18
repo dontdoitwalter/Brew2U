@@ -14,14 +14,15 @@ import { OrdersService } from 'src/app/services/orders/orders.service';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-  private items: Item[] = [];
-  private total: number = 0;
-  private delivery: number = 0;
-  private Tax: number = 0;
-  private subtotal: number = 0;
+  public items: Item[] = [];
+  public total: number = 0;
+  public delivery: number = 0;
+  public Tax: number = 0;
+  public subtotal: number = 0;
   error = '';
   stores = [];
   orders = [];
+  selectedStore:string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
