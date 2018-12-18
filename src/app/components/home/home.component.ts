@@ -10,6 +10,8 @@ import { UserService } from 'src/app/services/user/user.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  username:string;
+  password:string;
   error = '';
   user: User = {
     id: 0,
