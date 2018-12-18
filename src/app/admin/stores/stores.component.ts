@@ -11,8 +11,7 @@ import { AllStoresFromService } from '../../admin/stores/stores.component';
 })
 export class StoresComponent implements OnInit {
   error = '';
-  store: Store;
-  stores = []
+  store: Store[];
    
   constructor(private router: Router,
     private storesservice: StoresService,
@@ -32,8 +31,8 @@ export class StoresComponent implements OnInit {
 
   displayStores(): void {
     this.storesservice.getStores().subscribe((Store: AllStoresFromService) => {
-      this.stores = Store.stores
-      console.log(this.stores)
+      this.store = Store.stores
+      console.log(this.store)
     })
   }
 
@@ -53,5 +52,5 @@ export class StoresComponent implements OnInit {
 
 
 export interface AllStoresFromService {
-  stores:stores[];
+  stores:Store[]
 }

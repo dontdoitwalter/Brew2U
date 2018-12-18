@@ -10,7 +10,7 @@ import { AllStoresFromService } from '../../admin/stores/stores.component';
 })
 export class DisplayStoresComponent implements OnInit {
   error = '';
-  stores=[]
+  store=[]
 
   constructor(private router: Router,
     private storesservice: StoresService,
@@ -23,8 +23,8 @@ export class DisplayStoresComponent implements OnInit {
   
   displayStores(): void {
     this.storesservice.getStores().subscribe((Store: AllStoresFromService) => {
-      this.stores = Store.stores
-      console.log(this.stores)
+      this.store = Store.stores
+      console.log(this.store)
     })
   }
 }
