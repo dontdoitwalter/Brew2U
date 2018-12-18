@@ -13,7 +13,7 @@ import { AlluserService } from '../../services/alluser.service';
 })
 export class UserAdminComponent implements OnInit {
   error = '';
-  users = []
+  users:User[] = []
   isAdmin = false;
   email:string;
   username:string;
