@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 
 export class CartComponent implements OnInit {
-  private items: Item[] = [];
+  public items: Item[] = [];
   private total: number = 0;
   private delivery: number = 0;
   private Tax: number = 0;
