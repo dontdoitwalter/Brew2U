@@ -39,7 +39,7 @@
             <input matInput type="tel" placeholder="{{ user.phoneNumber }}" [(ngModel)]="phoneNumber" name="phoneNumber">
         </mat-form-field>
         <mat-card-actions>
-            <button mat-raised-button (click)="updateUser( email, firstName, lastName, userAddress, userSecondAddress, userCity, userState , userZipcode, phoneNumber)">UPDATE</button>
+            <button mat-raised-button (click)="updateUser()">UPDATE</button>
         </mat-card-actions>
     </form>
 </mat-card>
