@@ -1,7 +1,7 @@
 import { Drink } from "./drinkModel";
 
 export interface User {
-    id: number;
+     id: number,
     email: string,
     password: string,
     username: string,

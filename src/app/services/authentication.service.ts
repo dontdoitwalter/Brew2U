@@ -39,11 +39,13 @@ export class AuthenticationService {
           // localStorage.setItem('userID', user.id);
       }
 
+      
       return user;
   }));
 }
    
 logout() {
   localStorage.removeItem('token');
+  localStorage.removeItem('user');
 }
 }

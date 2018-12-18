@@ -31,15 +31,6 @@ export class StoresService {
     return this.http.get<any>(`https://brew2userver.herokuapp.com/store/show/${id}`, httpOptions);
    }
 
-  // private getSelectedIndex(id: number) {
-  //   for (var i = 0; i < this.stores.length; i++) {
-  //     if (this.stores[i].id == id) {
-  //       return i;
-  //     }
-  //   }
-  //   return -1;
-  // }
-
   updateStore(id, storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours) {
     return this.http.put<Store[]>(`https://brew2userver.herokuapp.com/store/update/${id}`, { store: { storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours } }, httpOptions)
   }

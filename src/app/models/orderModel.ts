@@ -1,8 +1,8 @@
 import { Drink } from "./drinkModel";
 
 export interface Order {
-    drinks: Drink [];
-    id: number;
+    drinks: Drink [],
+    id: number,
     email: string,
     password: string,
     username: string,
