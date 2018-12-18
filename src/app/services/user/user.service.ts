@@ -46,9 +46,7 @@ export class UserService {
     return this.http.get<any>(`https://brew2userver.herokuapp.com/user/info/${id}`, httpOptions)
   }
   
-  updateUser(id, email, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber): Observable<User[]> {
-    return this.http.put<any>(`https://brew2userver.herokuapp.com/user/update/${id}`, httpOptions)
+  updateUser(id, email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber, isAdmin): Observable<User[]> {
+    return this.http.put<User[]>(`https://brew2userver.herokuapp.com/user/update/${id}`,{ user: { id, email, username, password, firstName, lastName, userAddress, userSecondAddress, userCity, userState, userZipcode, phoneNumber, isAdmin } }, httpOptions)
   }
-
-
 }
