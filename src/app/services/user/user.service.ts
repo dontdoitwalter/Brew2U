@@ -34,8 +34,8 @@ export class UserService {
       }));
   }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`https://brew2userver.herokuapp.com/user/allusers`, httpOptions)
+  getUsers(): Observable<any> {
+    return this.http.get<any>(`https://brew2userver.herokuapp.com/user/allusers`, httpOptions)
   }
 
   deleteUser(id) {
