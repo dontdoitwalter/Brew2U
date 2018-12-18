@@ -16,8 +16,7 @@ const httpOptions = {
 })
 export class OrdersService {
   error = '';
-  drinks = [];
-  order = []
+// Orders = [];
 
   constructor(
     private http: HttpClient,
@@ -32,23 +31,17 @@ export class OrdersService {
     return this.http.get<Drink[]>(`https://brew2userver.herokuapp.com/drink/alldrinks`, httpOptions)
   }
 
+// http://localhost:3000/user/login
+
   getOrders(userID): Observable<Order[]> {
     return this.http.get<Order[]>(`https://brew2userver.herokuapp.com/user/${userID}/pastorders`, httpOptions)
   }
 
+
+
+
   findOneProduct(id: number): Observable<Drink[]> {
     return this.http.get<Drink[]>(`https://brew2userver.herokuapp.com/drink/getdrink/${{ id }}`, httpOptions)
-    // console.log('this is drinks in the find  ', id)
-    // return this.drinks[this.getSelectedIndex(id)];
-  }
-
-  private getSelectedIndex(id: number) {
-    for (var i = 0; i < this.drinks.length; i++) {
-      if (this.drinks[i].id == id) {
-        return i;
-      }
     }
-    return -1;
-  }
 
-}
+ }

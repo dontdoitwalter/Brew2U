@@ -11,7 +11,6 @@ import { CartComponent } from '../cart/cart.component';
   styleUrls: ['./menu.component.css']
 })
 
-
 export class MenuComponent implements OnInit {
   // id: number; 
   // drinkName: string;

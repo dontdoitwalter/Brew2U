@@ -1,7 +1,7 @@
 // import { Hours } from "./hours";
 
 export interface Store {
-    id: number;
+    id: number,
     storeName: string,
     streetAddress: string,
     storeState: string,

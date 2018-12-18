@@ -4,6 +4,7 @@ import { OrdersService } from '../../services/orders/orders.service';
 import { Order } from 'src/app/models/orderModel';
 import { UserService } from '../../services/user/user.service';
 import { User } from '../../models/userModel';
+import { Drink } from '../../models/drinkModel';
 
 @Component({
   selector: 'app-update-user-profile',
@@ -13,8 +14,58 @@ import { User } from '../../models/userModel';
 export class UpdateUserProfileComponent implements OnInit {
   userID = localStorage.getItem('user');
   error = '';
-  order: Order[];
+orders = [];
 
+  user: User = {
+    id: 0,
+    email: "",
+    password: "",
+    username: "",
+    userAddress: "",
+    userSecondAddress: "",
+    userState: "",
+    userCity: "",
+    userZipcode: 0,
+    phoneNumber: "",
+    firstName: "",
+    lastName: "",
+    isAdmin: false,
+    drink: [],
+  };
+
+  order: Order = {
+    drinks: [],
+    id: 0,
+    email: '',
+    password: '',
+    username: '',
+    userAddress: '',
+    userSecondAddress: '',
+    userState: '',
+    userCity: '',
+    userZipcode: 0,
+    phoneNumber: '',
+    firstName: '',
+    lastName: '',
+    isAdmin: false,
+  };
+  
+  // user: User = {
+  //   id: 0,
+  //   email: "",
+  //   password: "",
+  //   username: "",
+  //   userAddress: "",
+  //   userSecondAddress: "",
+  //   userState: "",
+  //   userCity: "",
+  //   userZipcode: 0,
+  //   phoneNumber: "",
+  //   firstName: "",
+  //   lastName: "",
+  //   isAdmin: false,
+  //   drink: [],
+  // };
 
   constructor(private router: Router,
     private orderservice: OrdersService,
@@ -22,21 +73,26 @@ export class UpdateUserProfileComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.displayOrders(this.userID);
+   this.getOneUser(this.userID);
+    // this.displayOrders(this.userID);
   }
 
-  displayOrders(userID): void {
-    this.orderservice.getOrders(userID).subscribe(Order => {
-      this.order = Order;
-      console.log('in display orders??', this.order)
-    })
-  }
+  // displayOrders(userID): void {
+  //   this.orderservice.getOrders(userID).subscribe(Orders => {
+  //     this.orders = Orders;
+  //     console.log('in display orders??', this.orders)
+  //   })
+  // }
 
   getOneUser(userID) : void {
   this.userservice.getOneUser(userID)
       .subscribe(
-        data => {
-          console.log(data);
+        userObjFromserver => {
+          this.user = userObjFromserver.user;
+          console.log(this.user)
+                // user => {
+        //   user = user.user 
+        //   console.log(user);
           // this.router.navigate([`/menu`]);
         },
         error => {
