@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OrdersService } from 'src/app/services/orders/orders.service';
+import { Drink } from 'src/app/models/drinkModel';
 
 @Component({
   selector: 'app-order-admin',
@@ -9,7 +10,7 @@ import { OrdersService } from 'src/app/services/orders/orders.service';
 })
 export class OrderAdminComponent implements OnInit {
   error = '';
-  drinks = []
+  drink:Drink[]
 
   constructor(private router: Router,
     private ordersservice: OrdersService
@@ -20,9 +21,11 @@ export class OrderAdminComponent implements OnInit {
   }
 
   displayAllorders(): void {
-    this.ordersservice.getAllorders().subscribe(Drink => {
-      this.drinks = Drink
-      console.log(this.drinks)
+    this.ordersservice.getAllorders().subscribe((Drink: AllOrdersFromService) => {
+      this.drink = Drink.drink
+      console.log(this.drink)
     })
   }
+} export interface AllOrdersFromService{
+  drink:Drink[]
 }
