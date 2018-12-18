@@ -13,7 +13,7 @@ import { AlluserService } from '../../services/alluser.service';
 })
 export class UserAdminComponent implements OnInit {
   error = '';
-  users:any
+  users:User[]
   isAdmin = false;
   email:string;
   username:string;
@@ -37,7 +37,7 @@ export class UserAdminComponent implements OnInit {
   }
 
   getAllUsers(): void {
-    this.alluserservice.getUsers().subscribe(User => {
+    this.alluserservice.getUsers().subscribe((User: AllUsersFromService) => {
       this.users = User.data
       console.log('user admin ', this.users)
     })
@@ -67,4 +67,7 @@ export class UserAdminComponent implements OnInit {
           this.getAllUsers()
         }); 
       } 
+}
+export interface AllUsersFromService {
+  data:User[]
 }
