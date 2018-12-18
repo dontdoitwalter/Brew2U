@@ -12,14 +12,14 @@
     <button mat-raised-button (click)="addStore()">ADD A STORE</button>
 </mat-card-actions>
 <mat-card>
-<p *ngFor="let d of stores.stores"> {{ d.storeName }}
+<p *ngFor="let store of stores"> {{ store.storeName }}
     <!-- <mat-card> -->
         <!-- <form> -->
             <mat-card-actions>
-                <button mat-raised-button (click)="gotoUpdate(d.id)">UPDATE</button>
+                <button mat-raised-button (click)="gotoUpdate(store.id)">UPDATE</button>
             <!-- </mat-card-actions>
             <mat-card-actions> -->
-                <button mat-raised-button (click)="deleteStore(d.id)">DELETE</button>
+                <button mat-raised-button (click)="deleteStore(store.id)">DELETE</button>
             </mat-card-actions>
         <!-- </form> -->
     <!-- </mat-card> -->
