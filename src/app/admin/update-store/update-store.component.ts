@@ -52,9 +52,8 @@ export class UpdateStoreComponent implements OnInit {
         storeObjfromServer => {
           this.store = storeObjfromServer.store;
           console.log(this.store);
-          console.log(this.store.storeName);
-          console.log(this.store.storeState);
-
+          // console.log(this.store.storeName);
+          // console.log(this.store.storeState);
         },
         error => {
           this.error = error;
@@ -65,6 +64,7 @@ export class UpdateStoreComponent implements OnInit {
     this.storesservice.updateStore(id, storeName, streetAddress, storeState, storeCity, storeZip, storePhone, storeHours)
       .subscribe(
         data => {
+          console.log(this.stores)
         },
         error => {
           this.error = error;
@@ -74,6 +74,7 @@ export class UpdateStoreComponent implements OnInit {
           this.stores = Store.stores
       console.log(this.stores)
       this.router.navigate([`/admin/storesadmin`]);
-    })
+    // })
+  })
   }
-} 
+}
