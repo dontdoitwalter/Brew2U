@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication.service';
-import { User } from 'src/app/models/userModel';
-import { UserService } from 'src/app/services/user/user.service';
+import { User } from '../../models/userModel';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-home',
@@ -47,17 +47,5 @@ export class HomeComponent {
           this.error = error;
         });
 
-    // let userID = localStorage.getItem('user');
-    // this.userservice.getOneUser(userID)
-    //   .subscribe(
-    //     userObjFromserver => {
-    //       this.user = userObjFromserver.user;
-    //       console.log(this.user)
-    //     },
-    //     error => {
-    //       this.error = error;
-    //       console.log(this.error)
-    //     });
-    // this.router.navigate([`/menu`]);
   }
 }

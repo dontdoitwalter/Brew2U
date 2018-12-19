@@ -83,7 +83,7 @@ export class CartComponent implements OnInit {
         quantity: item.quantity,
       });
       this.subtotal += (item.product.price * item.quantity);
-      this.Tax = (this.subtotal * .07);
+      this.Tax = (this.subtotal * .09);
       this.delivery = 3;
       this.total = this.Tax + this.subtotal + this.delivery;
     }
