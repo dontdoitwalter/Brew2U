@@ -73,9 +73,8 @@ export class UpdateUserProfileComponent implements OnInit {
   }
 
   getOneUser(userID): void {
-    this.userservice.getOneUser(userID)
-      .subscribe(
-        userObjFromserver => {
+    this.userservice.getOneUser(userID).subscribe(
+        userObjFromserver => {       
           this.user = userObjFromserver.user;
           console.log(this.user)
              },
@@ -92,7 +91,7 @@ export class UpdateUserProfileComponent implements OnInit {
       error => {
         this.error = error;
         console.log(this.error)
-      });
+      });  this.router.navigate([`/userprofile`]);
     }
   }
    

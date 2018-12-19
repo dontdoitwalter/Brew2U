@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../../models/userModel';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 const httpOptions = {
@@ -10,7 +10,6 @@ const httpOptions = {
     'Authorization': `${localStorage.token}`,
   })
 };
-
 
 @Injectable({
   providedIn: 'root'

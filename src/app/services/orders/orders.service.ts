@@ -4,6 +4,7 @@ import { Drink } from '../../models/drinkModel';
 import { Observable } from "rxjs";
 import { Order } from 'src/app/models/orderModel';
 import { AllOrdersFromService } from 'src/app/admin/order-admin/order-admin.component';
+import { OneUsersOrdersFromService, OneUsersOrders } from '../../components/user-profile/user-profile.component';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -32,17 +33,24 @@ export class OrdersService {
     return this.http.get<AllOrdersFromService>(`https://brew2userver.herokuapp.com/drink/alldrinks`, httpOptions)
   }
 
-// http://localhost:3000/user/login
-
-  getOrders(userID): Observable<Order[]> {
-    return this.http.get<Order[]>(`https://brew2userver.herokuapp.com/user/${userID}/pastorders`, httpOptions)
+  getOrdersForOne(): Observable<any> {
+    return this.http.get<any>(`https://brew2userver.herokuapp.com/drink/getall`, httpOptions)
   }
 
+  // getOrdersForOne(): Observable<OneUsersOrders> {
+  //   return this.http.get<OneUsersOrders>(`https://brew2userver.herokuapp.com/drink/alldrinks`, httpOptions)
+  // }
 
+  // getOrders(userID): Observable<OneUsersOrdersFromService> {
+  //   return this.http.get<OneUsersOrdersFromService>(`https://brew2userver.herokuapp.com/user/${userID}/pastorders`, httpOptions)
+  // }
+
+  getOrders(userID): Observable<OneUsersOrdersFromService> {
+    return this.http.get<OneUsersOrdersFromService>(`https://brew2userver.herokuapp.com/user/${userID}/pastorders`, httpOptions)
+  }
 
 
   findOneProduct(id: number): Observable<Drink[]> {
     return this.http.get<Drink[]>(`https://brew2userver.herokuapp.com/drink/getdrink/${{ id }}`, httpOptions)
     }
-
  }

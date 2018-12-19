@@ -3,9 +3,9 @@
 <br />
 <!-- <form>
   <mat-form-field>
-    <mat-select placeholder="Select Coffee Shop" [(ngModel)]="selectedStore" name="name">
-      <mat-option *ngFor="let store of stores" [value]="name.storeName">
-        {{name.storeName}}
+    <mat-select placeholder="Select Coffee Shop" [(ngModel)]="selectedStore" name="storeName">
+      <mat-option *ngFor="let store of stores.storeName" [value]="storeName">
+        {{storeName}}
       </mat-option>
     </mat-select>
   </mat-form-field>

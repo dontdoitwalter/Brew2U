@@ -4,18 +4,22 @@ import { OrdersService } from '../../services/orders/orders.service';
 import { User } from '../../models/userModel';
 import { UserService } from '../../services/user/user.service';
 import { Order } from '../../models/orderModel';
-
+import { AllOrdersFromService } from '../../admin/order-admin/order-admin.component';
+import { Drink } from '../../models/drinkModel';
 
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-
   styleUrls: ['./user-profile.component.scss']
 })
 
 export class UserProfileComponent implements OnInit {
-
-   user: User = {
+  drink:Drink[]
+  order:Order[]
+  error = '';
+  drinks = [];
+  userID = localStorage.getItem('user');
+  user: User = {
     id: 0,
     email: "",
     password: "",
@@ -48,10 +52,6 @@ export class UserProfileComponent implements OnInit {
     lastName: '',
     isAdmin: false,
   };
-  
-  error = '';
-  orders = [];
-  userID = localStorage.getItem('user');
 
   constructor(private router: Router,
     private orderservice: OrdersService,
@@ -60,31 +60,64 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit() {
     this.userID = localStorage.getItem('user');
-    this.getUserOrders(this.userID);
     this.getUserInfo(this.userID);
+    this.getUserOrders();
   }
 
-  getUserOrders(userID) {
-    this.orderservice.getOrders(userID).subscribe(ordersObjFromServer => {
-      this.orders = ordersObjFromServer;
-      console.log(this.orders)
-    },
-      error => {
-        this.error = error;
-        console.log(this.error)
-      });
+  // getUserOrders(userID) : void {
+  //   this.orderservice.getOrders(userID).subscribe((Drink) => {
+  //     this.order = Drink
+  //     console.log(this.order)
+  //   })
+  //   error => {
+  //     this.error = error;
+  //     console.log(this.error)
+  //   };
+  // }
+
+  // getUserOrders(userID) : void {
+  //   this.orderservice.getOrders(userID).subscribe((Order: OneUsersOrdersFromService) => {
+  //     this.order = Order.data
+  //   console.log('should be orders', this.order)
+  //   })
+  //   error => {
+  //     this.error = error;
+  //     console.log(this.error)
+  //   }; 
+  // }
+
+  getUserOrders() : void {
+    this.orderservice.getOrdersForOne().subscribe((OneUsersOrders) => {
+      this.order = OneUsersOrders
+    console.log('should be orders', this.order)
+    })
+    error => {
+      this.error = error;
+      console.log(this.error)
+    }; 
   }
 
-  getUserInfo(userID) {
-    this.userservice.getOneUser(userID)
-      .subscribe(
-        userObjFromserver => {
+  getUserInfo(userID): void {
+    this.userservice.getOneUser(userID).subscribe(
+        userObjFromserver => {       
           this.user = userObjFromserver.user;
           console.log(this.user)
-        },
+             },
         error => {
           this.error = error;
-          console.log(this.error)
         });
-  }
+  } 
 }
+
+// export interface OneUsersOrdersFromService{
+//   drink:Drink[]
+// }
+
+export interface OneUsersOrdersFromService{
+  data:Order[]
+ }
+
+ 
+export interface OneUsersOrders{
+  drinks:Order[]
+ }

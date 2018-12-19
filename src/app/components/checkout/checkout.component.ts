@@ -34,7 +34,7 @@ export class CheckoutComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.displayStores()
+    // this.displayStores()
     this.activatedRoute.params.subscribe(params => {
       var id = params['id'];
       if (id) {
@@ -119,17 +119,12 @@ export class CheckoutComponent implements OnInit {
     this.loadCart();
   }
 
-
-  displayStores(): void {
-    this.storesservice.getStores().subscribe((Store: AllStoresFromService) => {
-      this.stores = Store.stores
-      console.log(this.stores)
-    })
-  }
-
-
-
-
+  // displayStores(): void {
+  //   this.storesservice.getStores().subscribe((Store: AllStoresFromService) => {
+  //     this.stores = Store.stores
+  //     console.log(this.stores)
+  //   })
+  // }
 
   submitCart() {
         if (localStorage.getItem('cart') == null) {
@@ -147,8 +142,6 @@ export class CheckoutComponent implements OnInit {
       }
       // this.finishOrder()
     }
-  
-
     finishOrder() {
       localStorage.removeItem('cart');
       this.router.navigate([`/thankyou`]);
