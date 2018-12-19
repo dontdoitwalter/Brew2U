@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OrdersService } from 'src/app/services/orders/orders.service';
-import { Drink } from 'src/app/models/drinkModel';
+import { Drink } from '../../models/drinkModel';
 
 @Component({
   selector: 'app-order-admin',

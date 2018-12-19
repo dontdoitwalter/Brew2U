@@ -16,11 +16,7 @@ Address: {{ user.userAddress }} {{ user.userSecondAddress }}
 <button mat-raised-button routerLink="/updateuser">Update Profile?</button>
 <br />
 <br />
-<!-- {{ order.data.drinks | json }} -->
-<!-- 
+
 <b> Last 5 items ordered : </b>
-<p *ngFor="let d of orders.data.drinks | reverse | slice:0:5; let i=index"  > {{ d.drinkName }} Size: {{ d.drinkSize }} ${{ d.price }}
-</p>  -->
-<!--  
-<p *ngFor="let d of order?.data?.drinks " > {{ d.drinkName }} Size: {{ d.drinkSize }} ${{ d.price }}
-</p> -->
+<p *ngFor="let d of order | reverse | slice:0:5; let i=index"  > {{ d.drinkName }} Size: {{ d.drinkSize }} ${{ d.price }}
+</p>
