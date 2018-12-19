@@ -3,8 +3,8 @@
 <h3> Before You Get Started </h3>
 <p>Before we dive into the project lets make sure we have everything we need.</p>
 <p>Here is what we used:</p>
-
-
+<p>Angular 7</p>
+<p>Angular Material/p>
 <h3>What is Brew2U</h3>
 <p>
 Brew2U is a coffee delivery service application that allows the user to create an account and order coffee from their favorite coffee shop and have it delivered to them wherever they may be.
